@@ -35,7 +35,7 @@ vzorec_podatki_gore = re.compile(
     r'<div class="g2"><b>Priljubljenost:</b> (?P<priljubljenost>.+?)%.*?</div>.*?'
     r'<div class="g2"><b>Število poti:</b> <a class="moder" href="#poti">(?P<stevilo_poti>.+?)</a></div>.*?'
     r'<div style="padding-top:10px;"><b>Opis gore:</b><br />(?P<opis>.+?)</div>.*?'
-    r'<table class="TPoti" id="poti">(?P<blok_poti>)</table>',
+    r'<table class="TPoti" id="poti">(?P<blok_poti>.+?)</table>',
     flags=re.DOTALL
 )
 
@@ -60,17 +60,12 @@ def poberi_blok(ime_datoteke, vzorec):
     blok = vzorec.findall(niz)
     return blok
 
-# Funkcija, ki nam v danem nizu z danim vzorcem, najde vse iskane url naslove in jih vrne v seznamu slovarjev, v obliki:
+# Funkcija, ki nam v dani datoteki z danim vzorcem, najde vse pojavitve in jih vrne v seznamu slovarjev, v obliki:
 # [{'url_gorovje': '"/gorovje/gorisko_notranjsko_in_sneznisko_hribovje/26"'}, {'url_gorovje': '"/gorovje/julijske_alpe/1"'}]
-def najdi_url(niz, vzorec):
-    seznam_url = []
-    for pojavitev in re.finditer(vzorec, niz):
-        url = pojavitev.groupdict()
-        seznam_url.append(url)
-    return seznam_url
-
-# Funkcija, ki iz dane datoteke s pomočjo danega vzorca pobere podatke o vrhu. Vrne nam 
-def poberi_podatke_vrha(ime_datoteke, vzorec):
+def najdi_vzorec(ime_datoteke, vzorec):
     niz = vsebina_datoteke(ime_datoteke)
-    podatki_vrha = vzorec.findall(niz).groupdict()
-    return podatki_vrha
+    seznam = []
+    for pojavitev in re.finditer(vzorec, niz):
+        ujemanje = pojavitev.groupdict()
+        seznam.append(ujemanje)
+    return seznam
