@@ -62,8 +62,16 @@ def poberi_blok(ime_datoteke, vzorec):
 
 # Funkcija, ki nam v dani datoteki z danim vzorcem, najde vse pojavitve in jih vrne v seznamu slovarjev, v obliki:
 # [{'url_gorovje': '"/gorovje/gorisko_notranjsko_in_sneznisko_hribovje/26"'}, {'url_gorovje': '"/gorovje/julijske_alpe/1"'}]
-def najdi_vzorec(ime_datoteke, vzorec):
+def najdi_vzorec_v_datoteki(ime_datoteke, vzorec):
     niz = vsebina_datoteke(ime_datoteke)
+    seznam = []
+    for pojavitev in re.finditer(vzorec, niz):
+        ujemanje = pojavitev.groupdict()
+        seznam.append(ujemanje)
+    return seznam
+
+#Funkcija, ki nam v danem nizu z danim vzocem, najde vse pojavitve in vrne seznam slovarjev.
+def najdi_vzorec_v_nizu(niz, vzorec):
     seznam = []
     for pojavitev in re.finditer(vzorec, niz):
         ujemanje = pojavitev.groupdict()
