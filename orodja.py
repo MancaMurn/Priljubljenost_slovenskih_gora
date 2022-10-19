@@ -11,13 +11,15 @@ vzorec_slovenska_gorovja = re.compile(
 # Vzorec, ki bo iz bloka, kjer so samo slovenska gorovja, zajel url naslove strani, 
 # ki nam podajo sezname vrhov v določenem gorovju.
 vzorec_url_gorovja = re.compile(
-    r'<div class="vr\d"><a href=(?P<url_gorovje>.+?)>.+?</a></div>'
+    r'<div class="vr\d"><a href=(?P<url_gorovje>.+?)>.+?</a></div>',
+    flags=re.DOTALL
 )
 
 # Vzorec, ki bo iz strani, kjer je seznam vrhov v nekem gorovju,
 # zajel url naslov vrha, ki nas pelje na stran s podatki o tem vrhu.
 vzorec_url_vrh = re.compile(
-    r'<tr class="vr\d"><td class="vrtd.*?"><a href=(?P<url_vrh>.+?)>.+?</a></td>'
+    r'<tr class="vr\d"><td class="vrtd.*?"><a href=(?P<url_vrh>.+?)>.+?</a></td>',
+    flags=re.DOTALL
 )
 
 # Vzorec, ki pobere podatke o vrhu, na koncu dobimo še blok, 
@@ -33,12 +35,42 @@ vzorec_podatki_gore = re.compile(
     r'<div class="g2"><b>Priljubljenost:</b> (?P<priljubljenost>.+?)%.*?</div>.*?'
     r'<div class="g2"><b>Število poti:</b> <a class="moder" href="#poti">(?P<stevilo_poti>.+?)</a></div>.*?'
     r'<div style="padding-top:10px;"><b>Opis gore:</b><br />(?P<opis>.+?)</div>.*?'
-    r'<table class="TPoti" id="poti">(?P<blok_poti>)</table>'
+    r'<table class="TPoti" id="poti">(?P<blok_poti>)</table>',
+    flags=re.DOTALL
 )
 
 # Vzorec, ki iz bloka o poteh na nek vrh pobere podatke o posamezni poti. 
 vzorec_podatki_pot = re.compile(
     r'<tr class="trG\d"><td class="tdG"><a href=.+?>(?P<ime_poti>.+?)</a></td>.*?'
     r'<td class="tdG"><a href=.+?>(?P<cas_poti>.+?)</a></td>.*?'
-    r'<td class="tdG"><a href=.+?>(?P<tezavnost_poti>.+?)</a></td></tr>'
+    r'<td class="tdG"><a href=.+?>(?P<tezavnost_poti>.+?)</a></td></tr>',
+    flags=re.DOTALL
 )
+
+
+# Funkcija, ki vrne niz z vsebino datoteke z danim imenom.
+def vsebina_datoteke(ime_datoteke):
+    with open(ime_datoteke, encoding='utf-8') as datoteka:
+        return datoteka.read()
+
+# Funkcija, ki iz dane datoteke pobere samo potreben blok z danim vzorcem in vrne iskan blok, 
+# v obliki niza v seznamu.
+def poberi_blok(ime_datoteke, vzorec):
+    niz = vsebina_datoteke(ime_datoteke)
+    blok = vzorec.findall(niz)
+    return blok
+
+# Funkcija, ki nam v danem nizu z danim vzorcem, najde vse iskane url naslove in jih vrne v seznamu slovarjev, v obliki:
+# [{'url_gorovje': '"/gorovje/gorisko_notranjsko_in_sneznisko_hribovje/26"'}, {'url_gorovje': '"/gorovje/julijske_alpe/1"'}]
+def najdi_url(niz, vzorec):
+    seznam_url = []
+    for pojavitev in re.finditer(vzorec, niz):
+        url = pojavitev.groupdict()
+        seznam_url.append(url)
+    return seznam_url
+
+# Funkcija, ki iz dane datoteke s pomočjo danega vzorca pobere podatke o vrhu. Vrne nam 
+def poberi_podatke_vrha(ime_datoteke, vzorec):
+    niz = vsebina_datoteke(ime_datoteke)
+    podatki_vrha = vzorec.findall(niz).groupdict()
+    return podatki_vrha
