@@ -1,7 +1,7 @@
 # Priljubljenost_slovenskih_gora
 To je projektna naloga iz analize podatkov pri predmetu Programiranje 1 na Fakulteti za matematiko in fiziko, v Ljubljani.
 
-V tej nalogi bom analizirala priljubljenost vrhov v Sloveniji, najdene na strani [hrini.net](https://www.hribi.net/gorovja).
+V tej nalogi bom analizirala priljubljenost vrhov v Sloveniji, najdene na strani [hribi.net](https://www.hribi.net/gorovja).
 
 Za vsako goro oz. hrib bom zajela podatke:
 * ime vrha,
