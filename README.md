@@ -3,6 +3,7 @@ To je projektna naloga iz analize podatkov pri predmetu Programiranje 1 na Fakul
 
 V tej nalogi bom analizirala priljubljenost vrhov v Sloveniji, najdene na strani [hribi.net](https://www.hribi.net/gorovja).
 
+
 Za vsako goro oz. hrib bom zajela podatke:
 * ime vrha,
 * gorovje, v katerem se nahaja,
@@ -13,10 +14,12 @@ Za vsako goro oz. hrib bom zajela podatke:
 * število poti,
 * opis.
 
+
 Vsaka pot, pa ima še svoje podatke:
 * ime poti (znotraj imena je po navadi zajeto tudi izhodišče in vrh),
 * čas hoje,
 * težavnost poti.
+
 
 Delovne hipoteze:
 * Ali je priljubljenost premo sorazmerna s številom ogledov?
