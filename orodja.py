@@ -55,8 +55,13 @@ vzorec_podatki_pot = re.compile(
 
 # Funkcija, ki vrne niz z vsebino datoteke z danim imenom.
 def vsebina_datoteke(ime_datoteke):
-    with open(ime_datoteke, encoding='utf-8') as datoteka:
-        return datoteka.read()
+    if os.path.isfile(ime_datoteke) == True:
+        with open(ime_datoteke, encoding='utf-8') as datoteka:
+            return datoteka.read()
+    else:
+        print(f'Datoteka z imenom {ime_datoteke} ne obstaja!')
+        return False
+
 
 # Funkcija, ki iz dane datoteke pobere samo potreben blok z danim vzorcem in vrne iskan blok, 
 # v obliki niza v seznamu.
@@ -124,3 +129,4 @@ def zapisi_json(objekt, ime_datoteke):
     pripravi_imenik(ime_datoteke)
     with open(ime_datoteke, 'w', encoding='utf-8') as json_datoteka:
         json.dump(objekt, json_datoteka, indent=4, ensure_ascii=False)
+
