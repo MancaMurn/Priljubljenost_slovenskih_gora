@@ -16,14 +16,14 @@ vzorec_slovenska_gorovja = re.compile(
 # Vzorec, ki bo iz bloka, kjer so samo slovenska gorovja, zajel url naslove strani, 
 # ki nam podajo sezname vrhov v določenem gorovju.
 vzorec_url_gorovja = re.compile(
-    r'<div class="vr\d"><a href=(?P<url_gorovje>.+?)>.+?</a></div>',
+    r'<div class="vr\d"><a href="(?P<url_gorovje>.+?)">.+?</a></div>',
     flags=re.DOTALL
 )
 
 # Vzorec, ki bo iz strani, kjer je seznam vrhov v nekem gorovju,
 # zajel url naslov vrha, ki nas pelje na stran s podatki o tem vrhu.
 vzorec_url_vrh = re.compile(
-    r'<tr class="vr\d"><td class="vrtd.*?"><a href=(?P<url_vrh>.+?)>.+?</a></td>',
+    r'<tr class="vr\d"><td class="vrtd.*?"><a href="(?P<url_vrh>.+?)">.+?</a></td>',
     flags=re.DOTALL
 )
 
@@ -53,14 +53,19 @@ vzorec_podatki_pot = re.compile(
 )
 
 
+
+#Funkcija, ki preveri obstoj datoteke z danim imenom.
+def preveri_obstoj_datoteke(ime_datoteke):
+    return os.path.isfile(ime_datoteke)
+      
+
 # Funkcija, ki vrne niz z vsebino datoteke z danim imenom.
 def vsebina_datoteke(ime_datoteke):
-    if os.path.isfile(ime_datoteke) == True:
+    if preveri_obstoj_datoteke(ime_datoteke) == True:
         with open(ime_datoteke, encoding='utf-8') as datoteka:
             return datoteka.read()
     else:
         print(f'Datoteka z imenom {ime_datoteke} ne obstaja!')
-        return False
 
 
 # Funkcija, ki iz dane datoteke pobere samo potreben blok z danim vzorcem in vrne iskan blok, 
@@ -69,6 +74,7 @@ def poberi_blok(ime_datoteke, vzorec):
     niz = vsebina_datoteke(ime_datoteke)
     blok = vzorec.findall(niz)
     return blok
+
 
 # Funkcija, ki nam v dani datoteki z danim vzorcem, najde vse pojavitve in jih vrne v seznamu slovarjev, v obliki:
 # [{'url_gorovje': '"/gorovje/gorisko_notranjsko_in_sneznisko_hribovje/26"'}, {'url_gorovje': '"/gorovje/julijske_alpe/1"'}]
@@ -79,6 +85,7 @@ def najdi_vzorec_v_datoteki(ime_datoteke, vzorec):
         ujemanje = pojavitev.groupdict()
         seznam.append(ujemanje)
     return seznam
+
 
 #Funkcija, ki nam v danem nizu z danim vzocem, najde vse pojavitve in vrne seznam slovarjev.
 def najdi_vzorec_v_nizu(niz, vzorec):
@@ -91,8 +98,8 @@ def najdi_vzorec_v_nizu(niz, vzorec):
 
 #Če še ne obstaja, pripravi prazen imenik za dano datoteko.
 def pripravi_imenik(ime_datoteke):
-    imenik = os.path.dirname(ime_datoteke)
-    if imenik:
+   imenik = os.path.dirname(ime_datoteke)
+   if imenik:
         os.makedirs(imenik, exist_ok=True)
 
 
@@ -100,7 +107,6 @@ def pripravi_imenik(ime_datoteke):
 def shrani_spletno_stran(url, ime_datoteke, vsili_prenos=False):
     try:
         print(f'Shranjujem {url} ...', end='')
-        #sys.stdout.flush()
         if os.path.isfile(ime_datoteke) and not vsili_prenos:
             print('shranjeno že od prej!')
             return
@@ -114,13 +120,33 @@ def shrani_spletno_stran(url, ime_datoteke, vsili_prenos=False):
             print('shranjeno!')
 
 
+def popravi_podatke_vrh(slovar):
+    slovar['visina'] = int(slovar['visina'])
+    slovar['stevilo_ogledov'] = int(slovar['stevilo_ogledov'].replace('.',''))
+    slovar['priljubljenost'] = int(slovar['priljubljenost'])
+    slovar['stevilo_poti'] = int(slovar['stevilo_poti'])
+    for i in range(len(slovar['blok_poti'])):
+        cas = slovar['blok_poti'][i]['cas_poti']
+        print(cas)
+        if 'min' in cas and 'h' in cas:
+            cas = cas.replace(' h', '*60')
+            cas = cas.replace(' min', '')
+            cas = cas.replace(' ', '+')
+        else:
+            cas = cas.replace(' h', '*60')
+            cas = cas.replace(' min', '')
+        print(cas)
+        slovar['blok_poti'][i]['cas_poti'] = eval(cas)
+    
+     
+
 #Iz seznama slovarjev ustvari CSV datoteko z glavo.
-def zapisi_csv(slovarji, imena_polj, ime_datoteke):
+def zapisi_csv(seznam_slovarjev, imena_polj, ime_datoteke):
     pripravi_imenik(ime_datoteke)
     with open(ime_datoteke, 'w', encoding='utf-8') as csv_datoteka:
         writer = csv.DictWriter(csv_datoteka, fieldnames=imena_polj)
         writer.writeheader()
-        for slovar in slovarji:
+        for slovar in seznam_slovarjev:
             writer.writerow(slovar)
 
 
@@ -129,4 +155,3 @@ def zapisi_json(objekt, ime_datoteke):
     pripravi_imenik(ime_datoteke)
     with open(ime_datoteke, 'w', encoding='utf-8') as json_datoteka:
         json.dump(objekt, json_datoteka, indent=4, ensure_ascii=False)
-
