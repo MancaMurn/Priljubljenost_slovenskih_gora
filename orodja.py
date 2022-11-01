@@ -127,7 +127,6 @@ def popravi_podatke_vrh(slovar):
     slovar['stevilo_poti'] = int(slovar['stevilo_poti'])
     for i in range(len(slovar['blok_poti'])):
         cas = slovar['blok_poti'][i]['cas_poti']
-        print(cas)
         if 'min' in cas and 'h' in cas:
             cas = cas.replace(' h', '*60')
             cas = cas.replace(' min', '')
@@ -135,7 +134,6 @@ def popravi_podatke_vrh(slovar):
         else:
             cas = cas.replace(' h', '*60')
             cas = cas.replace(' min', '')
-        print(cas)
         slovar['blok_poti'][i]['cas_poti'] = eval(cas)
     
      

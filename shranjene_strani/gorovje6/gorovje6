@@ -1,0 +1,1432 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><link rel="stylesheet" type="text/css" href="/StyleSheet.css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><link rel="shortcut icon" href="/slike/logo.ico" /><link rel="alternate" type="application/rss+xml" title="Trenutne razmere - Forum" href="/rss1.xml" /><link rel="alternate" type="application/rss+xml" title="Novi opisi gora, izletov" href="/rss4.xml" /><link rel="alternate" type="application/rss+xml" title="Novice" href="/rss2.xml" /><link rel="alternate" type="application/rss+xml" title="Video posnetki" href="/rss9.xml" /><link rel="alternate" type="application/rss+xml" title="Komentirani izleti" href="/rss3.xml" /><link rel="alternate" type="application/rss+xml" title="Prireditve" href="/rss5.xml" /><link rel="alternate" type="application/rss+xml" title="Panorame" href="/rss6.xml" /><link rel="alternate" type="application/rss+xml" title="GPS sledi" href="/rss7.xml" /><link rel="alternate" type="application/rss+xml" title="Spletne kamere" href="/rss8.xml" /><link rel="alternate" type="application/rss+xml" title="Mali oglasi" href="/rss10.xml" /><link rel="alternate" type="application/rss+xml" title="Alpinistični vzponi" href="/rss20.xml" />
+    
+        <title>Posavsko hribovje in Dolenjska</title>
+        <meta name="description" content="Opis gorovja Posavsko hribovje in Dolenjska ter gora in izletov v gorovju Posavsko hribovje in Dolenjska." />
+<meta name="author" content="Rok Lukan" /><meta name="verify-v1" content="sXljD5GV20+EU7Ux2CdmrEDx3B65WlsKqpNRdgePdFs=" />
+
+<script>_iprom_consent=true;</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-427512-40', {'storage': 'none', 'clientId': '3134392E3132362E3133322E3438707974686F6E2D72657175657374732F322E32382E31'});
+  ga('send', 'pageview', {'anonymizeIp': true});
+</script>
+
+
+<title>
+
+</title></head>
+<body onload="menuZ();">
+
+    <form method="post" action="./25?id=25" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTU3MjQ3MDUzNmRkB1WHx4JwGEpP7d0SYVli42ui9i9nvM8p+gFPg0L/hgc=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B6457925" />
+<script>
+
+
+    function tooltip(tekst)
+    {
+
+        var tempDiv = document.createElement("div");
+        document.body.appendChild(tempDiv);
+        tempDiv.innerHTML = tekst;
+        tempDiv.className='tooltiptext';
+        setTimeout(function () { document.body.removeChild(tempDiv); }, 2000);
+    }
+</script>
+        
+
+    <script>
+        
+
+
+        function prijava() {
+            if (document.getElementById('DivPrijava').style.display == 'block')
+            {
+                document.getElementById('DivPrijava').style.display = 'none';
+            }
+            else
+            {
+                document.getElementById('DivPrijava').style.display = 'block';
+                document.getElementById("prijava1").focus();
+            }
+        }
+        
+        
+
+        function prijava1(u, g, a, v) {
+
+            var xmlHttp;
+            try {
+                xmlHttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e) {
+                        return false;
+                    }
+                }
+            }
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4) {
+                    if (xmlHttp.responseText.length<10)
+                    {
+                        document.getElementById('DivPrijava').style.display = 'none';
+                        window.location.reload();
+                        for (i = 0; i < document.forms.length; i++) {
+                            document.forms[i].reset();
+                        }
+                    }
+                    else
+                    {
+                        tooltip(xmlHttp.responseText);
+                    }
+                }
+            }
+            
+
+            if ((u.length > 0 && g.length>0)) {
+                xmlHttp.open("POST", "/ajaxprijava.aspx", false);
+                xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlHttp.setRequestHeader("Cache-Control", "no-cache");
+                xmlHttp.setRequestHeader("Pragma", "no-cache");
+                xmlHttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+                xmlHttp.send("u=" + encodeURIComponent(u) + "&g=" + encodeURIComponent(g) + "&a=" + encodeURIComponent(a));
+            }
+            else
+            {
+                tooltip("Vpišite uporabniško ime in geslo!");
+            }
+        }
+
+        function prijavaE(evt) { 
+            if (evt.keyCode === 13) {
+                evt.preventDefault();
+                prijava1(document.getElementById('prijava1').value, document.getElementById('prijava2').value, document.getElementById('avtoprijava').checked,1);
+            }
+
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode 
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) 
+                return false; 
+            return true; 
+        } 
+
+    </script>
+<script>
+function prijavaG() { 
+    prijava1(document.getElementById('prijava1').value, document.getElementById('prijava2').value, document.getElementById('avtoprijava').checked,1);
+} 
+</script>
+        
+
+<script>
+    var menuU1 = 0;
+    var menuUS = 0;
+    var vednoOdprt=0
+
+    function menuUser(tt) {
+        if (tt == 1) {
+            if (menuU1 == 1) {
+
+                if (window.innerWidth + 30 < menuUS || window.innerWidth - 30 > menuUS) {
+                    if(vednoOdprt == 1)
+                    {
+                        if(window.innerWidth>800){
+                            document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                            menuU1 = 0;
+                        }
+                    }
+                    else
+                    {
+                        document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                        menuU1 = 0;
+                    }
+                }
+            }
+        }
+        else if(tt == 2)
+        {
+            if(vednoOdprt == 1)
+            {
+                if(window.innerWidth<=800){
+                    document.getElementById('MeniZgorajZgorajM').innerHTML = "<div class='menizgorajM2'>" + document.getElementById('MeniZgorajZgoraj').innerHTML + "</div>";
+                    document.getElementById("MeniZgorajZgorajM").style.display = "block";
+                    menuU1 = 1;
+                    menuUS = window.innerWidth;
+                }
+            }
+        }
+        else {
+            if (menuU1 == 1) {
+                if(vednoOdprt == 1)
+                {
+                    if(window.innerWidth>800){
+                        document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                        menuU1 = 0;
+
+                    }
+                }
+                else
+                {
+                    document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                    menuU1 = 0;
+
+                }
+            }
+            else {
+                document.getElementById('MeniZgorajZgorajM').innerHTML = "<div class='menizgorajM2'>" + document.getElementById('MeniZgorajZgoraj').innerHTML + "</div>";
+                document.getElementById("MeniZgorajZgorajM").style.display = "block";
+                menuU1 = 1;
+                menuUS = window.innerWidth;
+
+            }
+        }
+    }
+
+    function menuZ() {
+        if(window.innerWidth<=800)
+        {
+            document.getElementById('menizgorajM').innerHTML = "<div class='menizgorajM2'>" + document.getElementById('MeniZgorajSredina').innerHTML+"</div>";
+        }
+    }
+
+    var menu1 = 0;
+    var menuS = 0;
+    function menu(tt) {
+        if (tt == 1) {
+            if (menu1 == 1) {
+                
+                if (window.innerWidth + 30 < menuS || window.innerWidth - 30 > menuS) {
+                    document.getElementById("meniOzadje").style.display = "none";
+                    document.getElementById("leftM").style.display = "none";
+                    //document.getElementsByTagName("BODY")[0].classList.remove("fixedPosition");
+                    //document.getElementById("MeniZgorajLevo").style.display = "none";
+                    menu1 = 0;
+                }
+            }
+        }
+        else {
+            if (menu1 == 1) {
+                document.getElementById("meniOzadje").style.display = "none";
+                document.getElementById("leftM").style.display = "none";
+                //document.getElementsByTagName("BODY")[0].classList.remove("fixedPosition");
+                
+
+                menu1 = 0;
+            }
+            else {
+                document.getElementById('leftM').innerHTML = "<div class='MeniZgorajLevo2'>" + document.getElementById('MeniZgorajLevo').innerHTML + "</div><div>" + document.getElementById('left').innerHTML + "</div>";
+                document.getElementById("meniOzadje").style.display = "block";
+                document.getElementById("leftM").style.display = "block";
+                //document.getElementsByTagName("BODY")[0].classList.add("fixedPosition");
+
+
+                menu1 = 1;
+                menuS = window.innerWidth;
+            }
+        }
+    }
+
+
+
+    var isk22=true;
+    function iskanje22()
+    {
+
+        if(isk22)
+        {
+            document.getElementById("iskalnik3").style.display="block";
+            isk22=false;
+            document.getElementById("iskalnikX").focus();
+
+
+        }
+        else
+        {
+            document.getElementById("iskalnik3").style.display="none";
+            isk22=true;
+        }
+    }
+
+    function iskanje11()
+    {
+            if(document.getElementById("iskalnikX").value!="")
+            {
+                window.location.replace("/iskalnik.asp?q="+encodeURIComponent(document.getElementById("iskalnikX").value));
+            }
+            else
+            {
+                tooltip("Vpišite iskan niz besed!");
+            }
+    }
+
+    function iskanje111(eventx)
+    {
+        if (eventx.keyCode === 13) {
+            eventx.preventDefault();
+            if(document.getElementById("iskalnikX").value!="")
+            {
+                window.location.replace("/iskalnik.asp?q="+encodeURIComponent(document.getElementById("iskalnikX").value));
+            }
+            else
+            {
+                tooltip("Vpišite iskan niz besed!");
+            }
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+    function ajaxc() {
+        var xmlHttpcl;
+        try {
+            xmlHttpcl = new XMLHttpRequest();
+        }
+        catch (e) {
+            try {
+                xmlHttpcl = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xmlHttpcl = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    return false;
+                }
+            }
+        }
+        xmlHttpcl.onreadystatechange = function () {
+        }
+        xmlHttpcl.open("GET", "/ajaxc.asp", false);
+        xmlHttpcl.setRequestHeader("Cache-Control", "no-cache");
+        xmlHttpcl.setRequestHeader("Pragma", "no-cache");
+        xmlHttpcl.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlHttpcl.send(null);
+    }
+    ajaxc();
+</script>
+
+<script type="text/javascript">
+    function locljivost(l) {
+
+        var xmlHttploc;
+        try {
+            xmlHttploc = new XMLHttpRequest();
+        }
+        catch (e) {
+            try {
+                xmlHttploc = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xmlHttploc = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    return false;
+                }
+            }
+        }
+        xmlHttploc.onreadystatechange = function () {
+        }
+        xmlHttploc.open("GET", "/ajaxlocljivost.asp?l="+l, false);
+        xmlHttploc.setRequestHeader("Cache-Control", "no-cache");
+        xmlHttploc.setRequestHeader("Pragma", "no-cache");
+        xmlHttploc.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlHttploc.send(null);
+    }
+    
+    locljivost(window.innerWidth);
+    
+
+</script>
+   <div id="glava">
+
+       <div id="glava1_desktop"><a href="/" title="hribi"><span><img src="/slike/logo.png" alt="Hribi.net" /></span></a></div>
+       <div id="glava1_mobile"><a href="/" title="hribi"><img src="/slike/logo_mobile.png" alt="Hribi.net" /></a></div>
+       
+       <div id="iskalnik3"><table><tr><td class="td1"><input onkeypress="iskanje111(event);" class="iskalnik1" type="text" id="iskalnikX" /></td><td class="td1"><div onclick="iskanje11();" class="gumbiskanje"></div></td></tr></table></div>       
+
+
+       <div id="glava5"><div title="Menu" onclick="menu();" id="gM"></div></div>
+       <div id="glava3">
+           <div title="Prijava" onclick="prijava();" id="gA"><span class="h800">Prijava</span></div>
+
+       </div>
+       
+       <div id="glava2">
+           
+       </div>
+       
+       <div id="glava22">
+            <div title="Iskanje" onclick="iskanje22();" id="gMi"></div>
+       </div>
+
+
+       <div id="glava4">
+           
+           <div id="MeniZgorajZgoraj">
+               
+
+           </div>
+
+       </div>
+       
+   </div>
+<div id="MeniZgorajZgorajM"></div>
+
+
+
+<div id="DivPrijava">
+    <div id="DivPrijava2">
+        <div><b>Prijava</b></div>
+        <div class="rdec" id="prijavaNapaka"></div>
+        <div style="margin-top:5px;">Uporabniško ime:</div>
+        <div><input onkeypress="prijavaE(event);" class="tbox1" type="text" id="prijava1" /></div>
+        <div style="margin-top:5px;">Geslo:</div>
+        <div><input onkeypress="prijavaE(event);" class='tbox1' type='password' id='prijava2' /></div>
+        <div style="margin-top:5px;"><label for="avtoprijava">Zapomni si me:</label> <input type="checkbox" id="avtoprijava" /></div>
+        <div style="margin-top:5px;"><div class="gumb1" onclick="prijavaG();">Prijava</div></div>
+        <div style="padding-top:15px; clear:both;">Še niste registrirani? <a href="/registracija.asp">Registracija</a>.</div>
+        <div style="margin-top:15px;"><a href="/geslo.asp">Ste pozabili geslo?</a></div>
+    </div>
+</div>
+
+
+<div id="meniOzadje" onclick="menu();"></div>
+
+<div id="menizgorajM"></div>
+<div class="menizgorajA">
+<div class="menizgoraj">
+
+    
+    <div id="MeniZgorajLevo"><a href="https://www.hike.uno/mountain_range/posavsko_hribovje_and_dolenjska/25"><img src="/slike/eng.gif" /></a>&nbsp;&nbsp;<a href="http://hr.hribi.net/GoreVGorovju.asp?id=25"><img src="/slike/hrv.gif" /></a></div>
+<div id="MeniZgorajSredina">
+    <div class="zavihek1"><a class="pov2" href="/gorovja">Seznam gora</a></div>
+    <div class="zavihek0"><a class="pov2" href="/iskalnik_izletov">Iskanje izletov</a></div>
+</div>
+
+
+
+</div>
+</div>
+
+
+<div id="okvir">
+<div class="left" id="left">
+
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/"><h2>Novice</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/trenutnerazmere.asp?slo=1"><h2>Trenutne razmere</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/gorovja"><h2>Seznam gora</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/iskalnik_izletov"><h2>Iskanje izletov</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/gorske_panorame"><h2>Panorama</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/video/"><h2>Video</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/mali_oglasi"><h2>Mali oglasi</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/vpisna_knjiga_vrhov"><h2>Vpisna knjiga</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/prireditve.asp"><h2>Prireditve</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/alpske_zivali"><h2>Živali</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/rastline"><h2>Cvetje</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/kviz.asp"><h2>Kviz</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/zemljevid.asp"><h2>Zemljevid</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/vreme.asp"><h2>Vreme</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/gps.asp"><h2>GPS sledi</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/spletne_kamere_v_gorah"><h2>Spletne kamere</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/najslike.asp"><h2>Slike</h2></a></div>
+<div class="hr"></div>
+
+
+<div style="margin:5px -2px 0px -3px;">
+<table style="width:100%;">
+<tr style="background-color:#4EC29E;"><td colspan="3"><div class="anketanaslov">Anketa</div></td></tr>
+
+
+<tr><td colspan="3"><div class="anketabesedilo2">Ali ste že bili na Ribenski planini (965 m)?</div></td></tr>
+    
+<script type="text/javascript">
+    function anketaGlasuj() {
+        var av=0;
+        var stOdg=3;
+        for(i=1; i<=stOdg; i++)
+        {
+            if(document.getElementById('anketa'+i).checked)
+            {
+                av=i;
+            }
+        }
+        
+
+        
+
+        var xmlHttpAnketa;
+        try {
+            xmlHttpAnketa = new XMLHttpRequest();
+        }
+        catch (e) {
+            try {
+                xmlHttpAnketa = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xmlHttpAnketa = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    return false;
+                }
+            }
+        }
+        xmlHttpAnketa.onreadystatechange=function()
+        {
+            if(xmlHttpAnketa.readyState==4)
+            {
+
+                location.reload();
+                //document.getElementById("cookie_1").innerHTML=xmlHttpAnketa.responseText;
+                
+            }
+        }
+        xmlHttpAnketa.open("GET", "/anketa.asp?id=849&av="+av, false);
+        xmlHttpAnketa.setRequestHeader("Cache-Control", "no-cache");
+        xmlHttpAnketa.setRequestHeader("Pragma", "no-cache");
+        xmlHttpAnketa.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlHttpAnketa.send(null);
+    }
+</script> 
+
+<tr><td><input value="odgovor1" type="radio" style="height:15px; margin:0px 0px 0px 2px; padding:0px;" id="anketa1" name="anketa" /></td><td style="width:100%; font-size:10px; color:#f5f5f5;"><label for="anketa1">Da</label></td></tr>
+
+<tr><td><input value="odgovor2" type="radio" style="height:15px; margin:0px 0px 0px 2px; padding:0px;" id="anketa2" name="anketa" /></td><td style="width:100%; font-size:10px; color:#f5f5f5;"><label for="anketa2">Ne</label></td></tr>
+
+<tr><td><input value="odgovor3" type="radio" style="height:15px; margin:0px 0px 0px 2px; padding:0px;" id="anketa3" name="anketa" /></td><td style="width:100%; font-size:10px; color:#f5f5f5;"><label for="anketa3">Ne vem</label></td></tr>
+
+<tr><td colspan="2"><div class="gumb3" onclick="anketaGlasuj();">Glasuj</div></td></tr>
+
+
+</table>
+</div>
+
+
+
+</div>
+
+
+<div class="leftM" id="leftM"></div>
+
+<script>
+    
+    window.addEventListener('scroll', function (event) {
+        if(document.documentElement.scrollTop>=110)
+        {
+            document.getElementById("oglasD").style.position = "fixed";
+            document.getElementById("oglasD").style.top = "0px";
+        }
+        else
+        {
+            document.getElementById("oglasD").style.position = "static";
+            document.getElementById("oglasD").style.top = "";
+
+        }
+    });
+    
+</script>
+            
+<div class="main">
+    <div id="drobtinice">
+        
+    <a class="moder" href="/gorovja">Gorovja</a> / Posavsko hribovje in Dolenjska
+
+    </div>
+
+    <div id="oglas1">
+        <div id="oglas1a">
+
+<style type="text/css">
+.adslot_2 { display:inline-block; width: 320px; height: 100px; }
+@media (max-width: 467px) { .adslot_2 { width: 320px; height: 100px; } }
+@media (min-width:468px) { .adslot_2 { width: 468px; height: 60px; } }
+@media (min-width:1048px) { .adslot_2 { width: 728px; height: 90px; } }
+</style>
+<ins class="adsbygoogle adslot_2"
+   data-ad-client="ca-pub-0186014428427864"
+   data-ad-slot="4291449630"></ins>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+           
+
+
+        </div><div id="oglas1b">
+        
+<style type="text/css">
+.adslot_3 { display:inline-block; width: 728px; height: 90px; }
+@media (max-width: 1792px) { .adslot_3 { display: none; } }
+@media (min-width:1793px) { .adslot_3 { width: 728px; height: 90px; } }
+</style>
+<ins class="adsbygoogle adslot_3"
+   data-ad-client="ca-pub-0186014428427864"
+   data-ad-slot="5558932295"></ins>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+        
+        </div>
+
+    </div>
+
+    <div class="main2">
+            
+    
+
+    <script type="text/javascript">
+        var drzavaref = ""; drzavarefid=0;
+        var samoRefDrzava=0;
+        var gumbKlik=0;
+        var gorovjeopis = "";
+        var gorovjeopismob = "";
+        var sortT = 2;
+        function sortiraj(id) {
+            if(gumbKlik==1)
+            {
+                if(samoRefDrzava==1){
+                    samoRefDrzava=0;
+                }
+                else{
+                    samoRefDrzava=1;
+                }
+                gumbKlik=0;
+            }
+            else
+            {
+                if (parseInt(id) == 2)
+                {
+                    if (sortT == 2) {
+                        id = 4;
+                        sortT = 4;
+                    }
+                    else {
+                        id = 2;
+                        sortT = 2;
+                    }
+                }
+                if (parseInt(id) == 1) {
+                    if (sortT == 1) {
+                        id = 3;
+                        sortT = 3;
+                    }
+                    else {
+                        id = 1;
+                        sortT = 1;
+                    }
+                }
+            }
+            var xmlHttp;
+            try {
+                xmlHttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e) {
+                        return false;
+                    }
+                }
+            }
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4) {
+                    document.getElementById("gorovjaseznam").innerHTML = xmlHttp.responseText;
+
+                    
+
+                }
+            }
+            if(samoRefDrzava==1)
+            {
+                xmlHttp.open("GET", "/ajaxgorovja.asp?gorovjeid=25&sortiraj=" + id + "&dref="+drzavarefid, true);
+                xmlHttp.setRequestHeader("Cache-Control", "no-cache");
+                xmlHttp.setRequestHeader("Pragma", "no-cache");
+                xmlHttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+                xmlHttp.send(null);
+            }
+            else
+            {
+                xmlHttp.open("GET", "/ajaxgorovja.asp?gorovjeid=25&sortiraj=" + id, true);
+                xmlHttp.setRequestHeader("Cache-Control", "no-cache");
+                xmlHttp.setRequestHeader("Pragma", "no-cache");
+                xmlHttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+                xmlHttp.send(null);
+            }
+        }
+        
+        function prikaziopis()
+        {
+            document.getElementById('opisgorovjamob').innerHTML = gorovjeopis;
+            document.getElementById('opisgorovjagumb').style.display = 'none';
+            document.getElementById('opisgorovjamob').style.display = 'block';
+
+            
+        }
+
+           function abc() {
+               if (window.innerWidth <= 1020) {
+                   if (document.getElementById('opisgorovja').innerHTML.length > 0) {
+                       document.getElementById('opisgorovja').innerHTML = "";
+                       document.getElementById('opisgorovja').style.display = 'none';
+                   }
+                   if(document.getElementById('opisgorovjamob').innerHTML=="")
+                   {
+                       document.getElementById('opisgorovjagumb').style.display = 'block';
+                   }
+                   
+               }
+               else {
+                   if (document.getElementById('opisgorovja').innerHTML.length == 0) {
+                       document.getElementById('opisgorovja').innerHTML = gorovjeopis;
+                       document.getElementById('opisgorovjamob').innerHTML = "";
+                       document.getElementById('opisgorovjamob').style.display = 'none';
+                       document.getElementById('opisgorovjagumb').style.display = 'none';
+                       document.getElementById('opisgorovja').style.display = 'block';
+
+                   }
+                   
+
+               }
+           }
+
+           window.addEventListener('resize', function (event) {
+               abc();
+           });
+        
+</script>
+    <div class="naslov1"><h1>Posavsko hribovje in Dolenjska</h1></div>
+    <table><tr><td>
+
+    <div onclick="prikaziopis();" class="opisgorovjagumb" id="opisgorovjagumb">Prikaži opis gorovja</div>
+    <div id="opisgorovjamob" class="opisgorovjamob"></div>
+
+    <div id="gorovjaseznam">
+        <table>
+            <tr><td class="vrtdA"><b><span style="cursor:pointer;" onclick="sortiraj(1);">Ime</span></b></td><td class="vrtdA"><b><span style="cursor:pointer;" onclick="sortiraj(2);">Višina</span></b></td><td class="vrtdX">sortiraj po imenu ali višini</td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/kum/25/192">Kum</a></td><td class="vrtd"><a href="/gora/kum/25/192">1220&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtdA"><a href="/gora/crni_vrh_cemseniska_planina/25/763">Črni vrh (Čemšeniška planina)</a></td><td class="vrtdA"><a href="/gora/crni_vrh_cemseniska_planina/25/763">1204&nbsp;m</a></td><td class="vrtdX">1200&nbsp;m</td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/trdinov_vrh/25/735">Trdinov vrh</a></td><td class="vrtd"><a href="/gora/trdinov_vrh/25/735">1178&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/javor/25/1963">Javor</a></td><td class="vrtd"><a href="/gora/javor/25/1963">1132&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/mrzlica/25/678">Mrzlica</a></td><td class="vrtd"><a href="/gora/mrzlica/25/678">1122&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtdA"><a href="/gora/koca_na_cemseniski_planini/25/762">Koča na Čemšeniški planini</a></td><td class="vrtdA"><a href="/gora/koca_na_cemseniski_planini/25/762">1120&nbsp;m</a></td><td class="vrtdX">1100&nbsp;m</td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/veliki_rog/25/901">Veliki Rog</a></td><td class="vrtd"><a href="/gora/veliki_rog/25/901">1099&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/gozdnik/25/856">Gozdnik</a></td><td class="vrtd"><a href="/gora/gozdnik/25/856">1090&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/ledenik/25/2724">Ledenik</a></td><td class="vrtd"><a href="/gora/ledenik/25/2724">1072&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveta_marija_kljucevica/25/2620">Sveta Marija (Ključevica)</a></td><td class="vrtd"><a href="/gora/sveta_marija_kljucevica/25/2620">1067&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/mirna_gora/25/475">Mirna gora</a></td><td class="vrtd"><a href="/gora/mirna_gora/25/475">1047&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/slovenski_vrh/25/2723">Slovenski vrh</a></td><td class="vrtd"><a href="/gora/slovenski_vrh/25/2723">1041&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/mestni_vrh/25/1190">Mestni vrh</a></td><td class="vrtd"><a href="/gora/mestni_vrh/25/1190">1034&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/veliki_javornik_bohor/25/888">Veliki Javornik (Bohor)</a></td><td class="vrtd"><a href="/gora/veliki_javornik_bohor/25/888">1023&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveta_planina_partizanski_vrh/25/1455">Sveta planina (Partizanski vrh)</a></td><td class="vrtd"><a href="/gora/sveta_planina_partizanski_vrh/25/1455">1011&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/pozgani_hrib/25/1193">Požgani hrib</a></td><td class="vrtd"><a href="/gora/pozgani_hrib/25/1193">1009&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdZ"><a href="/gora/dom_na_mirni_gori/25/215">Dom na Mirni gori</a></td><td class="vrtdZ"><a href="/gora/dom_na_mirni_gori/25/215">1000&nbsp;m</a></td><td class="vrtdX2">1000&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/livoldski_vrh/25/1192">Livoldski vrh</a></td><td class="vrtd"><a href="/gora/livoldski_vrh/25/1192">994&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/veliko_kozje/25/839">Veliko Kozje</a></td><td class="vrtd"><a href="/gora/veliko_kozje/25/839">993&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kal/25/1196">Kal</a></td><td class="vrtd"><a href="/gora/kal/25/1196">985&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/koprivnik_bohor/25/889">Koprivnik (Bohor)</a></td><td class="vrtd"><a href="/gora/koprivnik_bohor/25/889">984&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/grad_fridrihstajn/25/1191">Grad Fridrihštajn</a></td><td class="vrtd"><a href="/gora/grad_fridrihstajn/25/1191">970&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/stene_svete_ane/25/1172">Stene svete Ane</a></td><td class="vrtd"><a href="/gora/stene_svete_ane/25/1172">964&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/dom_pri_miklavzu/25/736">Dom pri Miklavžu</a></td><td class="vrtd"><a href="/gora/dom_pri_miklavzu/25/736">964&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/nebeska_gora/25/1117">Nebeška gora</a></td><td class="vrtd"><a href="/gora/nebeska_gora/25/1117">958&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/spilk/25/1652">Špilk</a></td><td class="vrtd"><a href="/gora/spilk/25/1652">956&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gace/25/899">Gače</a></td><td class="vrtd"><a href="/gora/gace/25/899">955&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/skalica_bohor/25/887">Skalica (Bohor)</a></td><td class="vrtd"><a href="/gora/skalica_bohor/25/887">951&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/lisca/25/766">Lisca</a></td><td class="vrtd"><a href="/gora/lisca/25/766">948&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/planinski_rudarski_dom_na_kalu/25/786">Planinski rudarski dom na Kalu</a></td><td class="vrtd"><a href="/gora/planinski_rudarski_dom_na_kalu/25/786">946&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/malic/25/861">Malič</a></td><td class="vrtd"><a href="/gora/malic/25/861">936&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/roviskovec/25/1948">Roviškovec</a></td><td class="vrtd"><a href="/gora/roviskovec/25/1948">930&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/reska_planina/25/853">Reška planina</a></td><td class="vrtd"><a href="/gora/reska_planina/25/853">925&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/debeli_vrh_bohor/25/2244">Debeli vrh (Bohor)</a></td><td class="vrtd"><a href="/gora/debeli_vrh_bohor/25/2244">921&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/plesivec_bohor/25/3523">Plešivec (Bohor)</a></td><td class="vrtd"><a href="/gora/plesivec_bohor/25/3523">915&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/petrova_skala_na_bohorju/25/3524">Petrova skala na Bohorju</a></td><td class="vrtd"><a href="/gora/petrova_skala_na_bohorju/25/3524">913&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/koca_pri_sveti_ani_na_mali_gori/25/1171">Koča pri Sveti Ani na Mali gori</a></td><td class="vrtd"><a href="/gora/koca_pri_sveti_ani_na_mali_gori/25/1171">910&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kopitnik/25/788">Kopitnik</a></td><td class="vrtd"><a href="/gora/kopitnik/25/788">910&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdA"><a href="/gora/krvavica/25/355">Krvavica</a></td><td class="vrtdA"><a href="/gora/krvavica/25/355">909&nbsp;m</a></td><td class="vrtdX">900&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/koca_na_bohorju/25/890">Koča na Bohorju</a></td><td class="vrtd"><a href="/gora/koca_na_bohorju/25/890">896&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/grmada_bohor/25/3092">Grmada (Bohor)</a></td><td class="vrtd"><a href="/gora/grmada_bohor/25/3092">890&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/klobuk/25/1195">Klobuk</a></td><td class="vrtd"><a href="/gora/klobuk/25/1195">890&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_peter/25/898">Sveti Peter</a></td><td class="vrtd"><a href="/gora/sveti_peter/25/898">888&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_lenart_vrhe/25/1962">Sveti Lenart (Vrhe)</a></td><td class="vrtd"><a href="/gora/sveti_lenart_vrhe/25/1962">887&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/grmada_na_mali_gori/25/1169">Grmada na Mali gori</a></td><td class="vrtd"><a href="/gora/grmada_na_mali_gori/25/1169">887&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/naravno_bohorsko_okno/25/3525">Naravno bohorsko okno</a></td><td class="vrtd"><a href="/gora/naravno_bohorsko_okno/25/3525">883&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/slivna_pivkelj/25/796">Slivna (Pivkelj)</a></td><td class="vrtd"><a href="/gora/slivna_pivkelj/25/796">880&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/reber/25/1929">Reber</a></td><td class="vrtd"><a href="/gora/reber/25/1929">878&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/plese/25/1949">Pleše</a></td><td class="vrtd"><a href="/gora/plese/25/1949">866&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/koca_na_kopitniku/25/789">Koča na Kopitniku</a></td><td class="vrtd"><a href="/gora/koca_na_kopitniku/25/789">865&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/kamnik/25/854">Kamnik</a></td><td class="vrtd"><a href="/gora/kamnik/25/854">861&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/oslica_bohor/25/2241">Oslica (Bohor)</a></td><td class="vrtd"><a href="/gora/oslica_bohor/25/2241">860&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/ostrez/25/1753">Ostrež</a></td><td class="vrtd"><a href="/gora/ostrez/25/1753">856&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/ostri_vrh/25/1217">Ostri vrh</a></td><td class="vrtd"><a href="/gora/ostri_vrh/25/1217">855&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/zasavska_sveta_gora/25/214">Zasavska Sveta gora</a></td><td class="vrtd"><a href="/gora/zasavska_sveta_gora/25/214">852&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/koca_pri_jelenovem_studencu/25/1189">Koča pri Jelenovem studencu</a></td><td class="vrtd"><a href="/gora/koca_pri_jelenovem_studencu/25/1189">850&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/lipovec/25/1934">Lipovec</a></td><td class="vrtd"><a href="/gora/lipovec/25/1934">848&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/lovski_dom_bohor/25/3522">Lovski dom Bohor</a></td><td class="vrtd"><a href="/gora/lovski_dom_bohor/25/3522">842&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sv_primoz_in_felicijan_razbor_pri_cemseniku/25/3065">Sv. Primož in Felicijan (Razbor pri Čemšeniku)</a></td><td class="vrtd"><a href="/gora/sv_primoz_in_felicijan_razbor_pri_cemseniku/25/3065">841&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/ledena_jama_na_stojni/25/1194">Ledena jama na Stojni</a></td><td class="vrtd"><a href="/gora/ledena_jama_na_stojni/25/1194">840&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/cicelj/25/728">Cicelj</a></td><td class="vrtd"><a href="/gora/cicelj/25/728">836&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/tolsti_vrh_nad_celjsko_koco/25/879">Tolsti vrh nad Celjsko kočo</a></td><td class="vrtd"><a href="/gora/tolsti_vrh_nad_celjsko_koco/25/879">834&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/golava/25/855">Golava</a></td><td class="vrtd"><a href="/gora/golava/25/855">834&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/lovski_vrh/25/3226">Lovski vrh</a></td><td class="vrtd"><a href="/gora/lovski_vrh/25/3226">830&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/dom_na_zgornji_slivni/25/795">Dom na Zgornji Slivni</a></td><td class="vrtd"><a href="/gora/dom_na_zgornji_slivni/25/795">826&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/planinski_dom_na_zasavski_sveti_gori/25/1947">Planinski dom na Zasavski Sveti gori</a></td><td class="vrtd"><a href="/gora/planinski_dom_na_zasavski_sveti_gori/25/1947">822&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/planinski_dom_pri_gospodicni/25/733">Planinski dom pri Gospodični</a></td><td class="vrtd"><a href="/gora/planinski_dom_pri_gospodicni/25/733">822&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sedlata_gorica_pogorelec/25/897">Sedlata gorica (Pogorelec)</a></td><td class="vrtd"><a href="/gora/sedlata_gorica_pogorelec/25/897">817&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/govsko_brdo/25/1219">Govško brdo</a></td><td class="vrtd"><a href="/gora/govsko_brdo/25/1219">811&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/brest_bohor/25/2246">Brest (Bohor)</a></td><td class="vrtd"><a href="/gora/brest_bohor/25/2246">808&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdA"><a href="/gora/veliki_vrh_nad_svetino/25/2302">Veliki vrh nad Svetino</a></td><td class="vrtdA"><a href="/gora/veliki_vrh_nad_svetino/25/2302">807&nbsp;m</a></td><td class="vrtdX">800&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/jance/25/726">Janče</a></td><td class="vrtd"><a href="/gora/jance/25/726">792&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/pasnik_lipovec/25/1933">Pašnik Lipovec</a></td><td class="vrtd"><a href="/gora/pasnik_lipovec/25/1933">790&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/baba/25/1218">Baba</a></td><td class="vrtd"><a href="/gora/baba/25/1218">789&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/dom_na_smohorju/25/860">Dom na Šmohorju</a></td><td class="vrtd"><a href="/gora/dom_na_smohorju/25/860">784&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kamen_vrh/25/1168">Kamen vrh</a></td><td class="vrtd"><a href="/gora/kamen_vrh/25/1168">783&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/vruncev_dom_na_svetini/25/2338">Vrunčev dom na Svetini</a></td><td class="vrtd"><a href="/gora/vruncev_dom_na_svetini/25/2338">780&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/tolsto/25/1722">Tolsto</a></td><td class="vrtd"><a href="/gora/tolsto/25/1722">780&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/obolno/25/1137">Obolno</a></td><td class="vrtd"><a href="/gora/obolno/25/1137">776&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/limbarska_gora/25/530">Limbarska gora</a></td><td class="vrtd"><a href="/gora/limbarska_gora/25/530">773&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/almin_dom_na_svetini/25/880">Almin dom na Svetini</a></td><td class="vrtd"><a href="/gora/almin_dom_na_svetini/25/880">772&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kotecnik/25/857">Kotečnik</a></td><td class="vrtd"><a href="/gora/kotecnik/25/857">772&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/jasovnik/25/3246">Jasovnik</a></td><td class="vrtd"><a href="/gora/jasovnik/25/3246">764&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/dom_v_gorah/25/790">Dom v Gorah</a></td><td class="vrtd"><a href="/gora/dom_v_gorah/25/790">762&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/vrtace/25/3031">Vrtače</a></td><td class="vrtd"><a href="/gora/vrtace/25/3031">758&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/babni_vrh/25/3350">Babni vrh</a></td><td class="vrtd"><a href="/gora/babni_vrh/25/3350">753&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/kucelj/25/1135">Kucelj</a></td><td class="vrtd"><a href="/gora/kucelj/25/1135">748&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_ahac/25/725">Sveti Ahac</a></td><td class="vrtd"><a href="/gora/sveti_ahac/25/725">748&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_ilija_planina/25/1920">Sveti Ilija (Planina)</a></td><td class="vrtd"><a href="/gora/sveti_ilija_planina/25/1920">747&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/murovica/25/1205">Murovica</a></td><td class="vrtd"><a href="/gora/murovica/25/1205">743&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/zajceva_koca/25/174">Zajčeva koča</a></td><td class="vrtd"><a href="/gora/zajceva_koca/25/174">742&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kozice/25/3325">Kozice</a></td><td class="vrtd"><a href="/gora/kozice/25/3325">741&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_miklavz_nad_savo/25/727">Sveti Miklavž nad Savo</a></td><td class="vrtd"><a href="/gora/sveti_miklavz_nad_savo/25/727">741&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/zamboh/25/3050">Žamboh</a></td><td class="vrtd"><a href="/gora/zamboh/25/3050">738&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/tolsta_gora/25/3030">Tolsta gora</a></td><td class="vrtd"><a href="/gora/tolsta_gora/25/3030">734&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/ciganov_vrh_korinjski_hrib/25/2336">Ciganov vrh (Korinjski hrib)</a></td><td class="vrtd"><a href="/gora/ciganov_vrh_korinjski_hrib/25/2336">731&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_kriz_nad_planino_pri_sevnici/25/3533">Sveti Križ (nad Planino pri Sevnici)</a></td><td class="vrtd"><a href="/gora/sveti_kriz_nad_planino_pri_sevnici/25/3533">730&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/markova_glava_razgledna_stena/25/3486">Markova glava (razgledna stena)</a></td><td class="vrtd"><a href="/gora/markova_glava_razgledna_stena/25/3486">722&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/kmecki_turizem_obolno/25/2508">Kmečki turizem Obolno</a></td><td class="vrtd"><a href="/gora/kmecki_turizem_obolno/25/2508">722&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_lovrenc_nad__vasjo_okroglice/25/768">Sveti Lovrenc nad  vasjo Okroglice</a></td><td class="vrtd"><a href="/gora/sveti_lovrenc_nad__vasjo_okroglice/25/768">722&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/grmada_nad_celjem/25/877">Grmada nad Celjem</a></td><td class="vrtd"><a href="/gora/grmada_nad_celjem/25/877">718&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/pokojni_vrh_bohor/25/2263">Pokojni vrh (Bohor)</a></td><td class="vrtd"><a href="/gora/pokojni_vrh_bohor/25/2263">711&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gradisce/25/1136">Gradišče</a></td><td class="vrtd"><a href="/gora/gradisce/25/1136">706&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/plezalisce_in_ferata_renke/25/3088">Plezališče in ferata Renke</a></td><td class="vrtd"><a href="/gora/plezalisce_in_ferata_renke/25/3088">700&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdA"><a href="/gora/srebotnik/25/881">Srebotnik</a></td><td class="vrtdA"><a href="/gora/srebotnik/25/881">700&nbsp;m</a></td><td class="vrtdX">700&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_florjan_zgornja_gora/25/3029">Sveti Florjan (Zgornja Gora)</a></td><td class="vrtd"><a href="/gora/sveti_florjan_zgornja_gora/25/3029">698&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gorisca/25/3028">Gorišca</a></td><td class="vrtd"><a href="/gora/gorisca/25/3028">698&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/tabor/25/2480">Tabor</a></td><td class="vrtd"><a href="/gora/tabor/25/2480">697&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/pristava_nad_sticno/25/1446">Pristava nad Stično</a></td><td class="vrtd"><a href="/gora/pristava_nad_sticno/25/1446">694&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/bavc/25/3340">Bavč</a></td><td class="vrtd"><a href="/gora/bavc/25/3340">692&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/golcaj/25/1651">Golčaj</a></td><td class="vrtd"><a href="/gora/golcaj/25/1651">690&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/limberk/25/1166">Limberk</a></td><td class="vrtd"><a href="/gora/limberk/25/1166">687&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/veliki_spicek/25/977">Veliki Špiček</a></td><td class="vrtd"><a href="/gora/veliki_spicek/25/977">686&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/resevna/25/874">Resevna</a></td><td class="vrtd"><a href="/gora/resevna/25/874">682&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_kriz_slemsek/25/3250">Sveti Križ (Slemšek)</a></td><td class="vrtd"><a href="/gora/sveti_kriz_slemsek/25/3250">680&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/vrh_sticna/25/2310">Vrh (Šticna)</a></td><td class="vrtd"><a href="/gora/vrh_sticna/25/2310">679&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/stari_grad_grad_cusperk/25/1167">Stari grad (grad Čušperk)</a></td><td class="vrtd"><a href="/gora/stari_grad_grad_cusperk/25/1167">668&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/dom_pod_resko_planino/25/852">Dom pod Reško planino</a></td><td class="vrtd"><a href="/gora/dom_pod_resko_planino/25/852">664&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/visoka_spica_/25/1662">Visoka špica </a></td><td class="vrtd"><a href="/gora/visoka_spica_/25/1662">660&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveta_marjeta_prezganje/25/2427">Sveta Marjeta (Prežganje)</a></td><td class="vrtd"><a href="/gora/sveta_marjeta_prezganje/25/2427">658&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/dom_uste_-_zerenk/25/797">Dom Ušte - Žerenk</a></td><td class="vrtd"><a href="/gora/dom_uste_-_zerenk/25/797">658&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/celjska_koca/25/878">Celjska koča</a></td><td class="vrtd"><a href="/gora/celjska_koca/25/878">652&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/raskoze_bohor/25/2261">Raskože (Bohor)</a></td><td class="vrtd"><a href="/gora/raskoze_bohor/25/2261">650&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/vrhija/25/2141">Vrhija</a></td><td class="vrtd"><a href="/gora/vrhija/25/2141">648&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/geoss/25/794">GEOSS</a></td><td class="vrtd"><a href="/gora/geoss/25/794">645&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/zabreznik_sv_miklavz/25/2129">Zabreznik (Sv. Miklavž)</a></td><td class="vrtd"><a href="/gora/zabreznik_sv_miklavz/25/2129">644&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_lambert/25/1447">Sveti Lambert</a></td><td class="vrtd"><a href="/gora/sveti_lambert/25/1447">643&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_duh_polzevo/25/2718">Sveti Duh (Polževo)</a></td><td class="vrtd"><a href="/gora/sveti_duh_polzevo/25/2718">630&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/veliki_bojanski_vrh/25/3335">Veliki Bojanski vrh</a></td><td class="vrtd"><a href="/gora/veliki_bojanski_vrh/25/3335">627&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/zagarski_vrh/25/2748">Žagarski vrh</a></td><td class="vrtd"><a href="/gora/zagarski_vrh/25/2748">627&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/kalanov_hrib_kalancek/25/1693">Kalanov hrib (Kalanček)</a></td><td class="vrtd"><a href="/gora/kalanov_hrib_kalancek/25/1693">626&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/pecovniska_koca_na_grmadi/25/876">Pečovniška koča na Grmadi</a></td><td class="vrtd"><a href="/gora/pecovniska_koca_na_grmadi/25/876">620&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/pugled/25/1140">Pugled</a></td><td class="vrtd"><a href="/gora/pugled/25/1140">615&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/bajturn_zaplaski_hrib/25/2613">Bajturn (Zaplaški hrib)</a></td><td class="vrtd"><a href="/gora/bajturn_zaplaski_hrib/25/2613">609&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/lomnik/25/1638">Lomnik</a></td><td class="vrtd"><a href="/gora/lomnik/25/1638">609&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/veliki_slomnik/25/871">Veliki Slomnik</a></td><td class="vrtd"><a href="/gora/veliki_slomnik/25/871">609&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/dragov_dom_na_homu/25/859">Dragov dom na Homu</a></td><td class="vrtd"><a href="/gora/dragov_dom_na_homu/25/859">607&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/gradisce_nad_ilovo_goro/25/3366">Gradišče nad Ilovo Goro</a></td><td class="vrtd"><a href="/gora/gradisce_nad_ilovo_goro/25/3366">601&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdA"><a href="/gora/mali_bojanski_vrh/25/3347">Mali Bojanski vrh</a></td><td class="vrtdA"><a href="/gora/mali_bojanski_vrh/25/3347">600&nbsp;m</a></td><td class="vrtdX">600&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/hotel_polzevo/25/2717">Hotel Polževo</a></td><td class="vrtd"><a href="/gora/hotel_polzevo/25/2717">592&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/semenic/25/2115">Semenič</a></td><td class="vrtd"><a href="/gora/semenic/25/2115">590&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/dom_na_bukovici/25/858">Dom na Bukovici</a></td><td class="vrtd"><a href="/gora/dom_na_bukovici/25/858">584&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/hum_nad_laskim_/25/2579">Hum nad Laškim </a></td><td class="vrtd"><a href="/gora/hum_nad_laskim_/25/2579">583&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/trebni_vrh/25/2170">Trebni vrh</a></td><td class="vrtd"><a href="/gora/trebni_vrh/25/2170">581&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/stari_grad_kamnik/25/2155">Stari grad Kamnik</a></td><td class="vrtd"><a href="/gora/stari_grad_kamnik/25/2155">577&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/mehovski_hrib/25/2136">Mehovski hrib</a></td><td class="vrtd"><a href="/gora/mehovski_hrib/25/2136">571&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/hom_nad_celjem/25/872">Hom nad Celjem</a></td><td class="vrtd"><a href="/gora/hom_nad_celjem/25/872">570&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/grmadnik/25/3400">Grmadnik</a></td><td class="vrtd"><a href="/gora/grmadnik/25/3400">569&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/rifnik/25/875">Rifnik</a></td><td class="vrtd"><a href="/gora/rifnik/25/875">568&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/resje_nad_storami/25/2316">Resje nad Štorami</a></td><td class="vrtd"><a href="/gora/resje_nad_storami/25/2316">567&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/lisec_liska_gora/25/2172">Lisec (Liška gora)</a></td><td class="vrtd"><a href="/gora/lisec_liska_gora/25/2172">565&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/lovski_dom_na_vrhtrebnjem/25/2171">Lovski dom na Vrhtrebnjem</a></td><td class="vrtd"><a href="/gora/lovski_dom_na_vrhtrebnjem/25/2171">562&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/spanov_vrh_besnica/25/3532">Španov vrh (Besnica)</a></td><td class="vrtd"><a href="/gora/spanov_vrh_besnica/25/3532">559&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/pri_knapu_pod_babo/25/1220">Pri knapu pod Babo</a></td><td class="vrtd"><a href="/gora/pri_knapu_pod_babo/25/1220">552&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/smuk/25/2116">Smuk</a></td><td class="vrtd"><a href="/gora/smuk/25/2116">545&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/zaplaz/25/2612">Zaplaz</a></td><td class="vrtd"><a href="/gora/zaplaz/25/2612">543&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gradise_nad_storami/25/3428">Gradiše (nad Štorami)</a></td><td class="vrtd"><a href="/gora/gradise_nad_storami/25/3428">540&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kozljevec/25/3379">Kožljevec</a></td><td class="vrtd"><a href="/gora/kozljevec/25/3379">533&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/vipota/25/2277">Vipota</a></td><td class="vrtd"><a href="/gora/vipota/25/2277">532&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/debenji_vrh/25/1091">Debenji vrh</a></td><td class="vrtd"><a href="/gora/debenji_vrh/25/1091">530&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveta_trojica_nad_dobom/25/2872">Sveta Trojica (nad Dobom)</a></td><td class="vrtd"><a href="/gora/sveta_trojica_nad_dobom/25/2872">527&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/svete_gore/25/1443">Svete gore</a></td><td class="vrtd"><a href="/gora/svete_gore/25/1443">527&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/kamcic/25/3358">Kamčič</a></td><td class="vrtd"><a href="/gora/kamcic/25/3358">525&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sv_peter_olesce/25/2343">Sv. Peter (Olešče)</a></td><td class="vrtd"><a href="/gora/sv_peter_olesce/25/2343">525&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/ostri_vrh_nad_globodolom/25/2585">Ostri vrh (nad Globodolom)</a></td><td class="vrtd"><a href="/gora/ostri_vrh_nad_globodolom/25/2585">523&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/stresni_vrh_svibno/25/2140">Strešni vrh (Svibno)</a></td><td class="vrtd"><a href="/gora/stresni_vrh_svibno/25/2140">523&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/grad_turjak/25/2119">Grad Turjak</a></td><td class="vrtd"><a href="/gora/grad_turjak/25/2119">522&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sv_kriz_retje/25/2360">Sv. Križ (Retje)</a></td><td class="vrtd"><a href="/gora/sv_kriz_retje/25/2360">520&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/turn_sv_janez_krstnik/25/2320">Turn (Sv. Janez Krstnik)</a></td><td class="vrtd"><a href="/gora/turn_sv_janez_krstnik/25/2320">513&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_mohor_na_mohorjevem_hribu/25/2727">Sveti Mohor na Mohorjevem hribu</a></td><td class="vrtd"><a href="/gora/sveti_mohor_na_mohorjevem_hribu/25/2727">511&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/lavriceva_koca_na_gradiscu/25/1445">Lavričeva koča na Gradišču</a></td><td class="vrtd"><a href="/gora/lavriceva_koca_na_gradiscu/25/1445">510&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_lenart_kandrse/25/3205">Sveti Lenart (Kandrše)</a></td><td class="vrtd"><a href="/gora/sveti_lenart_kandrse/25/3205">508&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/grad_visnja_gora_stari_grad/25/2716">Grad Višnja Gora (Stari grad)</a></td><td class="vrtd"><a href="/gora/grad_visnja_gora_stari_grad/25/2716">506&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/magdalenska_gora/25/1139">Magdalenska gora</a></td><td class="vrtd"><a href="/gora/magdalenska_gora/25/1139">504&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdZ"><a href="/gora/kapelica_pri_mariji_pod_srebotnikom/25/2470">Kapelica pri Mariji pod Srebotnikom</a></td><td class="vrtdZ"><a href="/gora/kapelica_pri_mariji_pod_srebotnikom/25/2470">500&nbsp;m</a></td><td class="vrtdX2">500&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/ajdovscina_nad_ihanom/25/3100">Ajdovščina nad Ihanom</a></td><td class="vrtd"><a href="/gora/ajdovscina_nad_ihanom/25/3100">495&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/tabor_cerovo/25/2739">Tabor Cerovo</a></td><td class="vrtd"><a href="/gora/tabor_cerovo/25/2739">493&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_mihael_krizate/25/3206">Sveti Mihael (Križate)</a></td><td class="vrtd"><a href="/gora/sveti_mihael_krizate/25/3206">491&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/rudnisko_jezero/25/3227">Rudniško jezero</a></td><td class="vrtd"><a href="/gora/rudnisko_jezero/25/3227">490&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/spicberg/25/2158">Špicberg</a></td><td class="vrtd"><a href="/gora/spicberg/25/2158">490&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gradiski_gric/25/2726">Gradiški grič</a></td><td class="vrtd"><a href="/gora/gradiski_gric/25/2726">485&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/grad_podsreda/25/3458">Grad Podsreda</a></td><td class="vrtd"><a href="/gora/grad_podsreda/25/3458">475&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/oklo_nad_ihanom/25/2871">Oklo nad Ihanom</a></td><td class="vrtd"><a href="/gora/oklo_nad_ihanom/25/2871">465&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_primoz_in_felicijan_nad_semicem/25/2114">Sveti Primož in Felicijan nad Semičem</a></td><td class="vrtd"><a href="/gora/sveti_primoz_in_felicijan_nad_semicem/25/2114">465&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/vzletisce_peter_straska_gora/25/3487">Vzletišče Peter (Straška gora)</a></td><td class="vrtd"><a href="/gora/vzletisce_peter_straska_gora/25/3487">464&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/orle/25/2400">Orle</a></td><td class="vrtd"><a href="/gora/orle/25/2400">458&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/planinski_dom_na_brnici/25/873">Planinski dom na Brnici</a></td><td class="vrtd"><a href="/gora/planinski_dom_na_brnici/25/873">457&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/lazarjev_vrh/25/3430">Lazarjev vrh</a></td><td class="vrtd"><a href="/gora/lazarjev_vrh/25/3430">452&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/mazovnik_golovec/25/1430">Mazovnik (Golovec)</a></td><td class="vrtd"><a href="/gora/mazovnik_golovec/25/1430">450&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sitarjevec/25/2081">Sitarjevec</a></td><td class="vrtd"><a href="/gora/sitarjevec/25/2081">448&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_peter_selo_pri_mirni/25/2426">Sveti Peter (Selo pri Mirni)</a></td><td class="vrtd"><a href="/gora/sveti_peter_selo_pri_mirni/25/2426">445&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/murjevka/25/3399">Murjevka</a></td><td class="vrtd"><a href="/gora/murjevka/25/3399">443&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/stari_grad_stari_osterberg/25/1453">Stari grad (Stari Osterberg)</a></td><td class="vrtd"><a href="/gora/stari_grad_stari_osterberg/25/1453">443&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/dom_ld_dobrnic/25/2586">Dom LD Dobrnič</a></td><td class="vrtd"><a href="/gora/dom_ld_dobrnic/25/2586">440&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/crni_hrib_golovec/25/1431">Črni hrib (Golovec)</a></td><td class="vrtd"><a href="/gora/crni_hrib_golovec/25/1431">440&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/velika_radenska_stena/25/3330">Velika Radenska stena</a></td><td class="vrtd"><a href="/gora/velika_radenska_stena/25/3330">439&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/luknje/25/3513">Luknje</a></td><td class="vrtd"><a href="/gora/luknje/25/3513">438&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/gasperjeva_koca_pod_velikim_kozjem/25/848">Gašperjeva koča pod Velikim Kozjem</a></td><td class="vrtd"><a href="/gora/gasperjeva_koca_pod_velikim_kozjem/25/848">436&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/zupanova_jama/25/3569">Županova jama</a></td><td class="vrtd"><a href="/gora/zupanova_jama/25/3569">430&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/mala_radenska_stena/25/3331">Mala Radenska stena</a></td><td class="vrtd"><a href="/gora/mala_radenska_stena/25/3331">428&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveta_marija_trska_gora/25/2655">Sveta Marija (Trška Gora)</a></td><td class="vrtd"><a href="/gora/sveta_marija_trska_gora/25/2655">428&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_kriz_liska_gora/25/2173">Sveti Križ (Liška gora)</a></td><td class="vrtd"><a href="/gora/sveti_kriz_liska_gora/25/2173">428&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/veliki_vrh_krizentaver/25/2868">Veliki vrh (Križentaver)</a></td><td class="vrtd"><a href="/gora/veliki_vrh_krizentaver/25/2868">419&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/tinska_gora/25/2249">Tinska gora</a></td><td class="vrtd"><a href="/gora/tinska_gora/25/2249">409&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/stari_grad_na_grajskem_hribu/25/882">Stari grad na Grajskem hribu</a></td><td class="vrtd"><a href="/gora/stari_grad_na_grajskem_hribu/25/882">407&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/oljska_gora/25/2877">Oljska gora</a></td><td class="vrtd"><a href="/gora/oljska_gora/25/2877">401&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdA"><a href="/gora/sv_miklavz_na_goropecah/25/2870">Sv. Miklavž na Goropečah</a></td><td class="vrtdA"><a href="/gora/sv_miklavz_na_goropecah/25/2870">401&nbsp;m</a></td><td class="vrtdX">400&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/stari_grad_volcji_potok/25/2714">Stari grad (Volčji Potok)</a></td><td class="vrtd"><a href="/gora/stari_grad_volcji_potok/25/2714">398&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/miklavzev_hrib_miklavski_hrib/25/2270">Miklavžev hrib (Miklavški hrib)</a></td><td class="vrtd"><a href="/gora/miklavzev_hrib_miklavski_hrib/25/2270">394&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kamnolom_mlinskih_kamnov/25/3397">Kamnolom mlinskih kamnov</a></td><td class="vrtd"><a href="/gora/kamnolom_mlinskih_kamnov/25/3397">390&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/hribce/25/2592">Hribce</a></td><td class="vrtd"><a href="/gora/hribce/25/2592">388&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/stara_sveta_gora/25/3459">Stara sveta gora</a></td><td class="vrtd"><a href="/gora/stara_sveta_gora/25/3459">386&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sv_kunigunda_na_taboru_nad_ihanom/25/2869">Sv. Kunigunda na Taboru nad Ihanom</a></td><td class="vrtd"><a href="/gora/sv_kunigunda_na_taboru_nad_ihanom/25/2869">377&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/miklavzev_hrib_razgledni_stolp/25/2761">Miklavžev hrib (Razgledni stolp)</a></td><td class="vrtd"><a href="/gora/miklavzev_hrib_razgledni_stolp/25/2761">376&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveta_neza_liboje/25/3239">Sveta Neža (Liboje)</a></td><td class="vrtd"><a href="/gora/sveta_neza_liboje/25/3239">368&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/grad_kozje_drachenburg/25/3461">Grad Kozje (Drachenburg)</a></td><td class="vrtd"><a href="/gora/grad_kozje_drachenburg/25/3461">360&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/radenski_kal/25/3329">Radenski kal</a></td><td class="vrtd"><a href="/gora/radenski_kal/25/3329">360&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sv_andrej_nad_olimjem/25/2431">Sv. Andrej nad Olimjem</a></td><td class="vrtd"><a href="/gora/sv_andrej_nad_olimjem/25/2431">351&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/dom_frata/25/2587">Dom Frata</a></td><td class="vrtd"><a href="/gora/dom_frata/25/2587">345&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/gradisce_pri_grizah/25/3238">Gradišče (pri Grižah)</a></td><td class="vrtd"><a href="/gora/gradisce_pri_grizah/25/3238">341&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gradisko_jezero/25/2728">Gradiško jezero</a></td><td class="vrtd"><a href="/gora/gradisko_jezero/25/2728">340&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sveti_primoz_kremen/25/2428">Sveti Primož (Kremen)</a></td><td class="vrtd"><a href="/gora/sveti_primoz_kremen/25/2428">340&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/lahomniski_sopot/25/2345">Lahomniški sopot</a></td><td class="vrtd"><a href="/gora/lahomniski_sopot/25/2345">325&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sv_urban_cmereska_gorca/25/2330">Sv. Urban (Cmereška Gorca)</a></td><td class="vrtd"><a href="/gora/sv_urban_cmereska_gorca/25/2330">322&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gruska_jama/25/3460">Gruska jama</a></td><td class="vrtd"><a href="/gora/gruska_jama/25/3460">320&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/sv_lovrenc_kompole/25/2337">Sv. Lovrenc (Kompole)</a></td><td class="vrtd"><a href="/gora/sv_lovrenc_kompole/25/2337">315&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdA"><a href="/gora/pusti_peter/25/476">Pusti Peter</a></td><td class="vrtdA"><a href="/gora/pusti_peter/25/476">311&nbsp;m</a></td><td class="vrtdX">300&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/herkulovo_svetisce_na_bregu/25/2624">Herkulovo svetišče na Bregu</a></td><td class="vrtd"><a href="/gora/herkulovo_svetisce_na_bregu/25/2624">290&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/izvir_krke/25/2732">Izvir Krke</a></td><td class="vrtd"><a href="/gora/izvir_krke/25/2732">272&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/stari_grad_nad_otoccem/25/2656">Stari grad nad Otočcem</a></td><td class="vrtd"><a href="/gora/stari_grad_nad_otoccem/25/2656">250&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/jelovicka_in_mihova_jama/25/3326">Jelovička in Mihova jama</a></td><td class="vrtd"><a href="/gora/jelovicka_in_mihova_jama/25/3326">240&nbsp;m</a></td></tr>
+
+        </table>
+        </div>
+        </td>
+        <td>
+<div id="opisgorovja" class="opisgorovja">V to rubriko smo uvrstili hribovje ob reki Savi vzhodno od Ljubljane, Dolenjsko in Belo krajino. Za ta hribovja je značilno, da so po večini prepredena s cestami visoko v pobočja, kjer se nahajajo hribovske vasi.</div>
+        </td>
+           </tr></table>
+<script>gorovjeopis = document.getElementById('opisgorovja').innerHTML; gorovjeopismob = document.getElementById('opisgorovjamob').innerHTML; abc();</script>
+    </div>
+    <div id="noga">
+                <div style="float:right; position:relative;"><a href="http://hr.hribi.net" title="Hrvatski"><img src="/slike/hrv2.gif" /></a>&nbsp;&nbsp;<a href="https://www.hike.uno" title="English"><img src="/slike/eng2.gif" /></a>&nbsp;&nbsp;<a href="http://www.hiking-trail.net/" title="English - old website"><img src="/slike/eng3.png" /></a>&nbsp;</div>
+
+        <div>Copyright © 2006-2022 Hribi.net, <a class="noga" href="/pogoji.asp">Pogoji uporabe</a>, <a class="noga" href="/piskotki.asp">Piškotki</a></div>
+    </div>
+    <div style="clear:both;"></div>
+    </div>
+
+
+<div class="right">
+<div id="oglasD">
+
+
+
+<style type="text/css">
+.adslot_1 { display:inline-block; width: 160px; height: 320px; }
+@media (max-width: 800px) { .adslot_1 { display: none; } }
+@media (min-width:1024px) { .adslot_1 { width: 160px; height: 600px; } }
+@media (min-width:1793px) { .adslot_1 { width: 160px; height: 160px; } }
+</style>
+<ins class="adsbygoogle adslot_1"
+   data-ad-client="ca-pub-0186014428427864"
+   data-ad-slot="9540509523"></ins>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+
+</div>
+</div>
+</div>
+
+
+<script>
+    function piskotki_vec()
+    {
+        document.getElementById('cookie_3').innerHTML='<div class="fc3"><'+'ifr'+'ame name="framed" width="500" height="300" border="0" frameborder="0"  overflow-y="scroll" overflow-x="hidden" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" src="/piskotki_podrobnosti.asp" ><'+'/ifr'+'ame></div>';
+    }
+    function piskotki_obvestilo()
+    {
+        var xmlpiskot;
+        try
+        {
+            xmlpiskot=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            try
+            {
+                xmlpiskot=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                try
+                {
+                    xmlpiskot=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e)
+                {
+                    return false;
+                }
+            }
+        }
+        xmlpiskot.onreadystatechange=function()
+        {
+            if(xmlpiskot.readyState==4)
+            {
+                document.getElementById("cookie_1").innerHTML=xmlpiskot.responseText;
+                /*
+                var $cookie_1 = $('#cookie_1');
+                var iFixedDivHeight = $cookie_1.outerHeight({ 'margin': true });
+                $(window).bind('scroll', function(e) {
+                    var iWindowHeight = $(window).height();
+                    var iScrollPosition = $(window).scrollTop(); // or document.body.scrollTop
+                    $cookie_1.css({ 'top': iWindowHeight + iScrollPosition - iFixedDivHeight });
+                });*/
+            }
+        }
+        xmlpiskot.open("GET", "/ajax_piskot_obvestilo.asp", false);
+        xmlpiskot.setRequestHeader("Cache-Control", "no-cache");
+        xmlpiskot.setRequestHeader("Pragma", "no-cache");
+        xmlpiskot.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlpiskot.send(null);}
+
+       
+    function piskotki_strinjanje(id)
+    {
+        var xmlpiskot1;
+        try
+        {
+            xmlpiskot1=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            try
+            {
+                xmlpiskot1=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                try
+                {
+                    xmlpiskot1=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e)
+                {
+                    return false;
+                }
+            }
+        }
+        xmlpiskot1.onreadystatechange=function()
+        {
+            if(xmlpiskot1.readyState==4)
+            {
+                document.getElementById("cookie_1").innerHTML="";
+            }
+        }
+        xmlpiskot1.open("GET", "/ajax_piskot_strinjanje.asp?id="+id, false);
+        xmlpiskot1.setRequestHeader("Cache-Control", "no-cache");
+        xmlpiskot1.setRequestHeader("Pragma", "no-cache");
+        xmlpiskot1.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlpiskot1.send(null);}
+
+
+    function zasebnost_strinjanje(id)
+    {
+        var xmlzasebnost1;
+        try
+        {
+            xmlzasebnost1=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            try
+            {
+                xmlzasebnost1=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                try
+                {
+                    xmlzasebnost1=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e)
+                {
+                    return false;
+                }
+            }
+        }
+        xmlzasebnost1.onreadystatechange=function()
+        {
+            if(xmlzasebnost1.readyState==4)
+            {
+            }
+        }
+        xmlzasebnost1.open("GET", "/ajax_zasebnost_strinjanje.asp?id="+id, false);
+        xmlzasebnost1.setRequestHeader("Cache-Control", "no-cache");
+        xmlzasebnost1.setRequestHeader("Pragma", "no-cache");
+        xmlzasebnost1.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlzasebnost1.send(null);}
+</script>
+
+<div id="cookie_1"></div>
+<script>
+    piskotki_obvestilo();
+</script>
+
+
+<script>
+    window.addEventListener('resize', function (event) {
+        menu(1); menuUser(1); menuZ();
+    });
+    
+</script>
+
+
+<div id="oglasA">
+<script src="//cdn.ipromcloud.com/ipromNS.js" async defer></script><img src="data:image/png,iprom" style="display: none" onerror="
+	(function(img) {
+		window.ipromNS = window.ipromNS || {adTags: []};
+		var adTagId = 'iprom_adtag_' + Math.round(Math.random() * (new Date()).getTime());
+		var adHolder = document.createElement('div'); adHolder.id = adTagId;
+		img.parentNode.insertBefore(adHolder, img);
+		ipromNS.adTags.push({
+			 sitePath: ['programmatic','obds453j'], 
+			 dimension: '468x60',
+			 containerId : adTagId,
+			 callback : function(err, ad){} 
+		});
+	})(this);
+"/>
+
+</div>
+
+<div>
+<script src="//cdn.ipromcloud.com/ipromNS.js" async defer></script><img src="data:image/png,iprom" style="display: none" onerror="
+(function(img) {
+window.ipromNS = window.ipromNS || {adTags: []};
+var adTagId = 'iprom_adtag_' + Math.round(Math.random() * (new Date()).getTime());
+var adHolder = document.createElement('div'); adHolder.id = adTagId;
+img.parentNode.insertBefore(adHolder, img);
+ipromNS.adTags.push({
+sitePath: ['programmatic','obds453j'],
+dimension: 'floating',
+containerId : adTagId,
+callback : function(err, ad){}
+});
+})(this);
+"/>
+</div>
+
+
+
+</form>
+</body>
+</html>

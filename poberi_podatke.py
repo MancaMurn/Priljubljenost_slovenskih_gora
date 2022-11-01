@@ -1,6 +1,5 @@
 import orodja
 
-
 hribi_seznam_gorovij = "https://www.hribi.net/gorovja"
 
 
@@ -28,7 +27,7 @@ else:
 # Na vsaki shranjeni strani s posameznim gorovjem, moramo sedaj pobrati url naslove posamezne gore.
 # Za vsak tak naslov shranimo spletno stran.
 stevec = 0
-for j in range(2):
+for j in range(i):
     seznam_slovarjev_url_vrhov = orodja.najdi_vzorec_v_datoteki(f'shranjene_strani/gorovje{j}/gorovje{j}', orodja.vzorec_url_vrh)
     k = 0
     for url_slovar in seznam_slovarjev_url_vrhov:
@@ -43,7 +42,7 @@ print(stevec)
 # Iz vsake spletne strani za posamezen vrh moramo ven pobrati podatke o vrhu in jih zapisati v slovar. 
 # Hkrati še iz bloka poti poberem podatke in jih shranimo v podslovar.
 seznam_podatki_vrhov = []
-for j in range(2):
+for j in range(i):
     k = 0 
     while orodja.preveri_obstoj_datoteke(f'shranjene_strani/gorovje{j}/vrh{j}.{k}') == True:
         podatki = orodja.najdi_vzorec_v_datoteki(f'shranjene_strani/gorovje{j}/vrh{j}.{k}', orodja.vzorec_podatki_gore)
@@ -55,6 +54,7 @@ for j in range(2):
         seznam_podatki_vrhov += podatki
         k += 1
 
+
 # Posebej naredimo še seznam vseh poti.
 seznam_vseh_poti = []
 for vrh in seznam_podatki_vrhov:
@@ -64,8 +64,13 @@ for vrh in seznam_podatki_vrhov:
         seznam_vseh_poti.append(pot)
 
 
+# Iz seznama vrhov odstranimo bolk_poti, saj imamo za poti posebej seznam.
+for vrh in seznam_podatki_vrhov:
+    del vrh['blok_poti']
+
+
 orodja.zapisi_csv(seznam_podatki_vrhov, ['ime', 'drzava', 'gorovje', 
-'visina', 'vrsta', 'stevilo_ogledov', 'priljubljenost', 'stevilo_poti', 'opis', 'blok_poti'],
+'visina', 'vrsta', 'stevilo_ogledov', 'priljubljenost', 'stevilo_poti', 'opis'],
     'obdelani_podatki/hribi.csv')
 
 orodja.zapisi_csv(seznam_vseh_poti, ['ime_poti', 'cas_poti', 'tezavnost_poti', 'vrh'], 

@@ -1,0 +1,1080 @@
+
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><link rel="stylesheet" type="text/css" href="/StyleSheet.css" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="content-type" content="text/html; charset=UTF-8" /><link rel="shortcut icon" href="/slike/logo.ico" /><link rel="alternate" type="application/rss+xml" title="Trenutne razmere - Forum" href="/rss1.xml" /><link rel="alternate" type="application/rss+xml" title="Novi opisi gora, izletov" href="/rss4.xml" /><link rel="alternate" type="application/rss+xml" title="Novice" href="/rss2.xml" /><link rel="alternate" type="application/rss+xml" title="Video posnetki" href="/rss9.xml" /><link rel="alternate" type="application/rss+xml" title="Komentirani izleti" href="/rss3.xml" /><link rel="alternate" type="application/rss+xml" title="Prireditve" href="/rss5.xml" /><link rel="alternate" type="application/rss+xml" title="Panorame" href="/rss6.xml" /><link rel="alternate" type="application/rss+xml" title="GPS sledi" href="/rss7.xml" /><link rel="alternate" type="application/rss+xml" title="Spletne kamere" href="/rss8.xml" /><link rel="alternate" type="application/rss+xml" title="Mali oglasi" href="/rss10.xml" /><link rel="alternate" type="application/rss+xml" title="Alpinistični vzponi" href="/rss20.xml" />
+    
+        <title>Prekmurje</title>
+        <meta name="description" content="Opis gorovja Prekmurje ter gora in izletov v gorovju Prekmurje." />
+<meta name="author" content="Rok Lukan" /><meta name="verify-v1" content="sXljD5GV20+EU7Ux2CdmrEDx3B65WlsKqpNRdgePdFs=" />
+
+<script>_iprom_consent=true;</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-427512-40', {'storage': 'none', 'clientId': '3134392E3132362E3133322E3438707974686F6E2D72657175657374732F322E32382E31'});
+  ga('send', 'pageview', {'anonymizeIp': true});
+</script>
+
+
+<title>
+
+</title></head>
+<body onload="menuZ();">
+
+    <form method="post" action="./163?id=163" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTU3MjQ3MDUzNmRkB1WHx4JwGEpP7d0SYVli42ui9i9nvM8p+gFPg0L/hgc=" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B6457925" />
+<script>
+
+
+    function tooltip(tekst)
+    {
+
+        var tempDiv = document.createElement("div");
+        document.body.appendChild(tempDiv);
+        tempDiv.innerHTML = tekst;
+        tempDiv.className='tooltiptext';
+        setTimeout(function () { document.body.removeChild(tempDiv); }, 2000);
+    }
+</script>
+        
+
+    <script>
+        
+
+
+        function prijava() {
+            if (document.getElementById('DivPrijava').style.display == 'block')
+            {
+                document.getElementById('DivPrijava').style.display = 'none';
+            }
+            else
+            {
+                document.getElementById('DivPrijava').style.display = 'block';
+                document.getElementById("prijava1").focus();
+            }
+        }
+        
+        
+
+        function prijava1(u, g, a, v) {
+
+            var xmlHttp;
+            try {
+                xmlHttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e) {
+                        return false;
+                    }
+                }
+            }
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4) {
+                    if (xmlHttp.responseText.length<10)
+                    {
+                        document.getElementById('DivPrijava').style.display = 'none';
+                        window.location.reload();
+                        for (i = 0; i < document.forms.length; i++) {
+                            document.forms[i].reset();
+                        }
+                    }
+                    else
+                    {
+                        tooltip(xmlHttp.responseText);
+                    }
+                }
+            }
+            
+
+            if ((u.length > 0 && g.length>0)) {
+                xmlHttp.open("POST", "/ajaxprijava.aspx", false);
+                xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xmlHttp.setRequestHeader("Cache-Control", "no-cache");
+                xmlHttp.setRequestHeader("Pragma", "no-cache");
+                xmlHttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+                xmlHttp.send("u=" + encodeURIComponent(u) + "&g=" + encodeURIComponent(g) + "&a=" + encodeURIComponent(a));
+            }
+            else
+            {
+                tooltip("Vpišite uporabniško ime in geslo!");
+            }
+        }
+
+        function prijavaE(evt) { 
+            if (evt.keyCode === 13) {
+                evt.preventDefault();
+                prijava1(document.getElementById('prijava1').value, document.getElementById('prijava2').value, document.getElementById('avtoprijava').checked,1);
+            }
+
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode 
+            if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) 
+                return false; 
+            return true; 
+        } 
+
+    </script>
+<script>
+function prijavaG() { 
+    prijava1(document.getElementById('prijava1').value, document.getElementById('prijava2').value, document.getElementById('avtoprijava').checked,1);
+} 
+</script>
+        
+
+<script>
+    var menuU1 = 0;
+    var menuUS = 0;
+    var vednoOdprt=0
+
+    function menuUser(tt) {
+        if (tt == 1) {
+            if (menuU1 == 1) {
+
+                if (window.innerWidth + 30 < menuUS || window.innerWidth - 30 > menuUS) {
+                    if(vednoOdprt == 1)
+                    {
+                        if(window.innerWidth>800){
+                            document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                            menuU1 = 0;
+                        }
+                    }
+                    else
+                    {
+                        document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                        menuU1 = 0;
+                    }
+                }
+            }
+        }
+        else if(tt == 2)
+        {
+            if(vednoOdprt == 1)
+            {
+                if(window.innerWidth<=800){
+                    document.getElementById('MeniZgorajZgorajM').innerHTML = "<div class='menizgorajM2'>" + document.getElementById('MeniZgorajZgoraj').innerHTML + "</div>";
+                    document.getElementById("MeniZgorajZgorajM").style.display = "block";
+                    menuU1 = 1;
+                    menuUS = window.innerWidth;
+                }
+            }
+        }
+        else {
+            if (menuU1 == 1) {
+                if(vednoOdprt == 1)
+                {
+                    if(window.innerWidth>800){
+                        document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                        menuU1 = 0;
+
+                    }
+                }
+                else
+                {
+                    document.getElementById("MeniZgorajZgorajM").style.display = "none";
+                    menuU1 = 0;
+
+                }
+            }
+            else {
+                document.getElementById('MeniZgorajZgorajM').innerHTML = "<div class='menizgorajM2'>" + document.getElementById('MeniZgorajZgoraj').innerHTML + "</div>";
+                document.getElementById("MeniZgorajZgorajM").style.display = "block";
+                menuU1 = 1;
+                menuUS = window.innerWidth;
+
+            }
+        }
+    }
+
+    function menuZ() {
+        if(window.innerWidth<=800)
+        {
+            document.getElementById('menizgorajM').innerHTML = "<div class='menizgorajM2'>" + document.getElementById('MeniZgorajSredina').innerHTML+"</div>";
+        }
+    }
+
+    var menu1 = 0;
+    var menuS = 0;
+    function menu(tt) {
+        if (tt == 1) {
+            if (menu1 == 1) {
+                
+                if (window.innerWidth + 30 < menuS || window.innerWidth - 30 > menuS) {
+                    document.getElementById("meniOzadje").style.display = "none";
+                    document.getElementById("leftM").style.display = "none";
+                    //document.getElementsByTagName("BODY")[0].classList.remove("fixedPosition");
+                    //document.getElementById("MeniZgorajLevo").style.display = "none";
+                    menu1 = 0;
+                }
+            }
+        }
+        else {
+            if (menu1 == 1) {
+                document.getElementById("meniOzadje").style.display = "none";
+                document.getElementById("leftM").style.display = "none";
+                //document.getElementsByTagName("BODY")[0].classList.remove("fixedPosition");
+                
+
+                menu1 = 0;
+            }
+            else {
+                document.getElementById('leftM').innerHTML = "<div class='MeniZgorajLevo2'>" + document.getElementById('MeniZgorajLevo').innerHTML + "</div><div>" + document.getElementById('left').innerHTML + "</div>";
+                document.getElementById("meniOzadje").style.display = "block";
+                document.getElementById("leftM").style.display = "block";
+                //document.getElementsByTagName("BODY")[0].classList.add("fixedPosition");
+
+
+                menu1 = 1;
+                menuS = window.innerWidth;
+            }
+        }
+    }
+
+
+
+    var isk22=true;
+    function iskanje22()
+    {
+
+        if(isk22)
+        {
+            document.getElementById("iskalnik3").style.display="block";
+            isk22=false;
+            document.getElementById("iskalnikX").focus();
+
+
+        }
+        else
+        {
+            document.getElementById("iskalnik3").style.display="none";
+            isk22=true;
+        }
+    }
+
+    function iskanje11()
+    {
+            if(document.getElementById("iskalnikX").value!="")
+            {
+                window.location.replace("/iskalnik.asp?q="+encodeURIComponent(document.getElementById("iskalnikX").value));
+            }
+            else
+            {
+                tooltip("Vpišite iskan niz besed!");
+            }
+    }
+
+    function iskanje111(eventx)
+    {
+        if (eventx.keyCode === 13) {
+            eventx.preventDefault();
+            if(document.getElementById("iskalnikX").value!="")
+            {
+                window.location.replace("/iskalnik.asp?q="+encodeURIComponent(document.getElementById("iskalnikX").value));
+            }
+            else
+            {
+                tooltip("Vpišite iskan niz besed!");
+            }
+        }
+    }
+</script>
+
+
+<script type="text/javascript">
+    function ajaxc() {
+        var xmlHttpcl;
+        try {
+            xmlHttpcl = new XMLHttpRequest();
+        }
+        catch (e) {
+            try {
+                xmlHttpcl = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xmlHttpcl = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    return false;
+                }
+            }
+        }
+        xmlHttpcl.onreadystatechange = function () {
+        }
+        xmlHttpcl.open("GET", "/ajaxc.asp", false);
+        xmlHttpcl.setRequestHeader("Cache-Control", "no-cache");
+        xmlHttpcl.setRequestHeader("Pragma", "no-cache");
+        xmlHttpcl.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlHttpcl.send(null);
+    }
+    ajaxc();
+</script>
+
+<script type="text/javascript">
+    function locljivost(l) {
+
+        var xmlHttploc;
+        try {
+            xmlHttploc = new XMLHttpRequest();
+        }
+        catch (e) {
+            try {
+                xmlHttploc = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xmlHttploc = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    return false;
+                }
+            }
+        }
+        xmlHttploc.onreadystatechange = function () {
+        }
+        xmlHttploc.open("GET", "/ajaxlocljivost.asp?l="+l, false);
+        xmlHttploc.setRequestHeader("Cache-Control", "no-cache");
+        xmlHttploc.setRequestHeader("Pragma", "no-cache");
+        xmlHttploc.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlHttploc.send(null);
+    }
+    
+    locljivost(window.innerWidth);
+    
+
+</script>
+   <div id="glava">
+
+       <div id="glava1_desktop"><a href="/" title="hribi"><span><img src="/slike/logo.png" alt="Hribi.net" /></span></a></div>
+       <div id="glava1_mobile"><a href="/" title="hribi"><img src="/slike/logo_mobile.png" alt="Hribi.net" /></a></div>
+       
+       <div id="iskalnik3"><table><tr><td class="td1"><input onkeypress="iskanje111(event);" class="iskalnik1" type="text" id="iskalnikX" /></td><td class="td1"><div onclick="iskanje11();" class="gumbiskanje"></div></td></tr></table></div>       
+
+
+       <div id="glava5"><div title="Menu" onclick="menu();" id="gM"></div></div>
+       <div id="glava3">
+           <div title="Prijava" onclick="prijava();" id="gA"><span class="h800">Prijava</span></div>
+
+       </div>
+       
+       <div id="glava2">
+           
+       </div>
+       
+       <div id="glava22">
+            <div title="Iskanje" onclick="iskanje22();" id="gMi"></div>
+       </div>
+
+
+       <div id="glava4">
+           
+           <div id="MeniZgorajZgoraj">
+               
+
+           </div>
+
+       </div>
+       
+   </div>
+<div id="MeniZgorajZgorajM"></div>
+
+
+
+<div id="DivPrijava">
+    <div id="DivPrijava2">
+        <div><b>Prijava</b></div>
+        <div class="rdec" id="prijavaNapaka"></div>
+        <div style="margin-top:5px;">Uporabniško ime:</div>
+        <div><input onkeypress="prijavaE(event);" class="tbox1" type="text" id="prijava1" /></div>
+        <div style="margin-top:5px;">Geslo:</div>
+        <div><input onkeypress="prijavaE(event);" class='tbox1' type='password' id='prijava2' /></div>
+        <div style="margin-top:5px;"><label for="avtoprijava">Zapomni si me:</label> <input type="checkbox" id="avtoprijava" /></div>
+        <div style="margin-top:5px;"><div class="gumb1" onclick="prijavaG();">Prijava</div></div>
+        <div style="padding-top:15px; clear:both;">Še niste registrirani? <a href="/registracija.asp">Registracija</a>.</div>
+        <div style="margin-top:15px;"><a href="/geslo.asp">Ste pozabili geslo?</a></div>
+    </div>
+</div>
+
+
+<div id="meniOzadje" onclick="menu();"></div>
+
+<div id="menizgorajM"></div>
+<div class="menizgorajA">
+<div class="menizgoraj">
+
+    
+    <div id="MeniZgorajLevo"><a href="https://www.hike.uno/mountain_range/prekmurje/163"><img src="/slike/eng.gif" /></a>&nbsp;&nbsp;<a href="http://hr.hribi.net/GoreVGorovju.asp?id=163"><img src="/slike/hrv.gif" /></a></div>
+<div id="MeniZgorajSredina">
+    <div class="zavihek1"><a class="pov2" href="/gorovja">Seznam gora</a></div>
+    <div class="zavihek0"><a class="pov2" href="/iskalnik_izletov">Iskanje izletov</a></div>
+</div>
+
+
+
+</div>
+</div>
+
+
+<div id="okvir">
+<div class="left" id="left">
+
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/"><h2>Novice</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/trenutnerazmere.asp?slo=1"><h2>Trenutne razmere</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/gorovja"><h2>Seznam gora</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/iskalnik_izletov"><h2>Iskanje izletov</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/gorske_panorame"><h2>Panorama</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/video/"><h2>Video</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/mali_oglasi"><h2>Mali oglasi</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/vpisna_knjiga_vrhov"><h2>Vpisna knjiga</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/prireditve.asp"><h2>Prireditve</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/alpske_zivali"><h2>Živali</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/rastline"><h2>Cvetje</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/kviz.asp"><h2>Kviz</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/zemljevid.asp"><h2>Zemljevid</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/vreme.asp"><h2>Vreme</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/gps.asp"><h2>GPS sledi</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/spletne_kamere_v_gorah"><h2>Spletne kamere</h2></a></div>
+<div class="hr"></div>
+<div class="meni1"><a class="meni" href="/najslike.asp"><h2>Slike</h2></a></div>
+<div class="hr"></div>
+
+
+<div style="margin:5px -2px 0px -3px;">
+<table style="width:100%;">
+<tr style="background-color:#4EC29E;"><td colspan="3"><div class="anketanaslov">Anketa</div></td></tr>
+
+
+<tr><td colspan="3"><div class="anketabesedilo2">Ali ste že bili na Ribenski planini (965 m)?</div></td></tr>
+    
+<script type="text/javascript">
+    function anketaGlasuj() {
+        var av=0;
+        var stOdg=3;
+        for(i=1; i<=stOdg; i++)
+        {
+            if(document.getElementById('anketa'+i).checked)
+            {
+                av=i;
+            }
+        }
+        
+
+        
+
+        var xmlHttpAnketa;
+        try {
+            xmlHttpAnketa = new XMLHttpRequest();
+        }
+        catch (e) {
+            try {
+                xmlHttpAnketa = new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e) {
+                try {
+                    xmlHttpAnketa = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e) {
+                    return false;
+                }
+            }
+        }
+        xmlHttpAnketa.onreadystatechange=function()
+        {
+            if(xmlHttpAnketa.readyState==4)
+            {
+
+                location.reload();
+                //document.getElementById("cookie_1").innerHTML=xmlHttpAnketa.responseText;
+                
+            }
+        }
+        xmlHttpAnketa.open("GET", "/anketa.asp?id=849&av="+av, false);
+        xmlHttpAnketa.setRequestHeader("Cache-Control", "no-cache");
+        xmlHttpAnketa.setRequestHeader("Pragma", "no-cache");
+        xmlHttpAnketa.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlHttpAnketa.send(null);
+    }
+</script> 
+
+<tr><td><input value="odgovor1" type="radio" style="height:15px; margin:0px 0px 0px 2px; padding:0px;" id="anketa1" name="anketa" /></td><td style="width:100%; font-size:10px; color:#f5f5f5;"><label for="anketa1">Da</label></td></tr>
+
+<tr><td><input value="odgovor2" type="radio" style="height:15px; margin:0px 0px 0px 2px; padding:0px;" id="anketa2" name="anketa" /></td><td style="width:100%; font-size:10px; color:#f5f5f5;"><label for="anketa2">Ne</label></td></tr>
+
+<tr><td><input value="odgovor3" type="radio" style="height:15px; margin:0px 0px 0px 2px; padding:0px;" id="anketa3" name="anketa" /></td><td style="width:100%; font-size:10px; color:#f5f5f5;"><label for="anketa3">Ne vem</label></td></tr>
+
+<tr><td colspan="2"><div class="gumb3" onclick="anketaGlasuj();">Glasuj</div></td></tr>
+
+
+</table>
+</div>
+
+
+
+</div>
+
+
+<div class="leftM" id="leftM"></div>
+
+<script>
+    
+    window.addEventListener('scroll', function (event) {
+        if(document.documentElement.scrollTop>=110)
+        {
+            document.getElementById("oglasD").style.position = "fixed";
+            document.getElementById("oglasD").style.top = "0px";
+        }
+        else
+        {
+            document.getElementById("oglasD").style.position = "static";
+            document.getElementById("oglasD").style.top = "";
+
+        }
+    });
+    
+</script>
+            
+<div class="main">
+    <div id="drobtinice">
+        
+    <a class="moder" href="/gorovja">Gorovja</a> / Prekmurje
+
+    </div>
+
+    <div id="oglas1">
+        <div id="oglas1a">
+
+<style type="text/css">
+.adslot_2 { display:inline-block; width: 320px; height: 100px; }
+@media (max-width: 467px) { .adslot_2 { width: 320px; height: 100px; } }
+@media (min-width:468px) { .adslot_2 { width: 468px; height: 60px; } }
+@media (min-width:1048px) { .adslot_2 { width: 728px; height: 90px; } }
+</style>
+<ins class="adsbygoogle adslot_2"
+   data-ad-client="ca-pub-0186014428427864"
+   data-ad-slot="4291449630"></ins>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+           
+
+
+        </div><div id="oglas1b">
+        
+<style type="text/css">
+.adslot_3 { display:inline-block; width: 728px; height: 90px; }
+@media (max-width: 1792px) { .adslot_3 { display: none; } }
+@media (min-width:1793px) { .adslot_3 { width: 728px; height: 90px; } }
+</style>
+<ins class="adsbygoogle adslot_3"
+   data-ad-client="ca-pub-0186014428427864"
+   data-ad-slot="5558932295"></ins>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+        
+        </div>
+
+    </div>
+
+    <div class="main2">
+            
+    
+
+    <script type="text/javascript">
+        var drzavaref = ""; drzavarefid=0;
+        var samoRefDrzava=0;
+        var gumbKlik=0;
+        var gorovjeopis = "";
+        var gorovjeopismob = "";
+        var sortT = 2;
+        function sortiraj(id) {
+            if(gumbKlik==1)
+            {
+                if(samoRefDrzava==1){
+                    samoRefDrzava=0;
+                }
+                else{
+                    samoRefDrzava=1;
+                }
+                gumbKlik=0;
+            }
+            else
+            {
+                if (parseInt(id) == 2)
+                {
+                    if (sortT == 2) {
+                        id = 4;
+                        sortT = 4;
+                    }
+                    else {
+                        id = 2;
+                        sortT = 2;
+                    }
+                }
+                if (parseInt(id) == 1) {
+                    if (sortT == 1) {
+                        id = 3;
+                        sortT = 3;
+                    }
+                    else {
+                        id = 1;
+                        sortT = 1;
+                    }
+                }
+            }
+            var xmlHttp;
+            try {
+                xmlHttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e) {
+                        return false;
+                    }
+                }
+            }
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4) {
+                    document.getElementById("gorovjaseznam").innerHTML = xmlHttp.responseText;
+
+                    
+
+                }
+            }
+            if(samoRefDrzava==1)
+            {
+                xmlHttp.open("GET", "/ajaxgorovja.asp?gorovjeid=163&sortiraj=" + id + "&dref="+drzavarefid, true);
+                xmlHttp.setRequestHeader("Cache-Control", "no-cache");
+                xmlHttp.setRequestHeader("Pragma", "no-cache");
+                xmlHttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+                xmlHttp.send(null);
+            }
+            else
+            {
+                xmlHttp.open("GET", "/ajaxgorovja.asp?gorovjeid=163&sortiraj=" + id, true);
+                xmlHttp.setRequestHeader("Cache-Control", "no-cache");
+                xmlHttp.setRequestHeader("Pragma", "no-cache");
+                xmlHttp.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+                xmlHttp.send(null);
+            }
+        }
+        
+        function prikaziopis()
+        {
+            document.getElementById('opisgorovjamob').innerHTML = gorovjeopis;
+            document.getElementById('opisgorovjagumb').style.display = 'none';
+            document.getElementById('opisgorovjamob').style.display = 'block';
+
+            
+        }
+
+           function abc() {
+               if (window.innerWidth <= 1020) {
+                   if (document.getElementById('opisgorovja').innerHTML.length > 0) {
+                       document.getElementById('opisgorovja').innerHTML = "";
+                       document.getElementById('opisgorovja').style.display = 'none';
+                   }
+                   if(document.getElementById('opisgorovjamob').innerHTML=="")
+                   {
+                       document.getElementById('opisgorovjagumb').style.display = 'block';
+                   }
+                   
+               }
+               else {
+                   if (document.getElementById('opisgorovja').innerHTML.length == 0) {
+                       document.getElementById('opisgorovja').innerHTML = gorovjeopis;
+                       document.getElementById('opisgorovjamob').innerHTML = "";
+                       document.getElementById('opisgorovjamob').style.display = 'none';
+                       document.getElementById('opisgorovjagumb').style.display = 'none';
+                       document.getElementById('opisgorovja').style.display = 'block';
+
+                   }
+                   
+
+               }
+           }
+
+           window.addEventListener('resize', function (event) {
+               abc();
+           });
+        
+</script>
+    <div class="naslov1"><h1>Prekmurje</h1></div>
+    <table><tr><td>
+
+    <div onclick="prikaziopis();" class="opisgorovjagumb" id="opisgorovjagumb">Prikaži opis gorovja</div>
+    <div id="opisgorovjamob" class="opisgorovjamob"></div>
+
+    <div id="gorovjaseznam">
+        <table>
+            <tr><td class="vrtdA"><b><span style="cursor:pointer;" onclick="sortiraj(1);">Ime</span></b></td><td class="vrtdA"><b><span style="cursor:pointer;" onclick="sortiraj(2);">Višina</span></b></td><td class="vrtdX">sortiraj po imenu ali višini</td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sotinski_breg_kugla/163/1637">Sotinski breg (Kugla)</a></td><td class="vrtd"><a href="/gora/sotinski_breg_kugla/163/1637">418&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/serdiski_breg_rdeci_breg/163/1636">Serdiški breg (Rdeči breg)</a></td><td class="vrtd"><a href="/gora/serdiski_breg_rdeci_breg/163/1636">416&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/krizarka/163/3559">Križarka</a></td><td class="vrtd"><a href="/gora/krizarka/163/3559">413&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/srebrni_breg/163/3375">Srebrni breg</a></td><td class="vrtd"><a href="/gora/srebrni_breg/163/3375">404&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtdA"><a href="/gora/vukova_kapela_vidonci/163/3560">Vukova kapela (Vidonci)</a></td><td class="vrtdA"><a href="/gora/vukova_kapela_vidonci/163/3560">401&nbsp;m</a></td><td class="vrtdX">400&nbsp;m</td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/cerkev_sv_ane_v_boreci/163/3372">Cerkev sv. Ane v Boreči</a></td><td class="vrtd"><a href="/gora/cerkev_sv_ane_v_boreci/163/3372">395&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/kamenek/163/3421">Kamenek</a></td><td class="vrtd"><a href="/gora/kamenek/163/3421">392&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/tromejnik/163/1632">Tromejnik</a></td><td class="vrtd"><a href="/gora/tromejnik/163/1632">390&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/evharisticni_kriz_v_trdkovi/163/3445">Evharistični križ v Trdkovi</a></td><td class="vrtd"><a href="/gora/evharisticni_kriz_v_trdkovi/163/3445">388&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/pepelscek/163/3404">Pepelšček</a></td><td class="vrtd"><a href="/gora/pepelscek/163/3404">386&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/cincev_breg/163/3364">Činčev breg</a></td><td class="vrtd"><a href="/gora/cincev_breg/163/3364">375&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kapela_presvetega_srca_jezusovega_in_brezmadeznega_srca_marijinega_v_martinju/163/3490">Kapela Presvetega Srca Jezusovega in Brezmadežnega Srca Marijinega v Martinju</a></td><td class="vrtd"><a href="/gora/kapela_presvetega_srca_jezusovega_in_brezmadeznega_srca_marijinega_v_martinju/163/3490">375&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/bogin_breg/163/3453">Bogin breg</a></td><td class="vrtd"><a href="/gora/bogin_breg/163/3453">371&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/grad_grad_na_gorickem/163/1635">Grad Grad na Goričkem</a></td><td class="vrtd"><a href="/gora/grad_grad_na_gorickem/163/1635">370&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/zalka/163/3452">Zalka</a></td><td class="vrtd"><a href="/gora/zalka/163/3452">362&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/goricki_breg/163/3403">Gorički breg</a></td><td class="vrtd"><a href="/gora/goricki_breg/163/3403">362&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_benedikt_kancevci/163/2113">Sveti Benedikt (Kančevci)</a></td><td class="vrtd"><a href="/gora/sveti_benedikt_kancevci/163/2113">358&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kapela_v_stanjevcih/163/3407">Kapela v Stanjevcih</a></td><td class="vrtd"><a href="/gora/kapela_v_stanjevcih/163/3407">357&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveta_trojica_gornji_petrovci/163/3405">Sveta Trojica (Gornji Petrovci)</a></td><td class="vrtd"><a href="/gora/sveta_trojica_gornji_petrovci/163/3405">355&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/mejni_kamen_a_115/163/3391">Mejni kamen A 115</a></td><td class="vrtd"><a href="/gora/mejni_kamen_a_115/163/3391">353&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/apneni_breg/163/3398">Apneni breg</a></td><td class="vrtd"><a href="/gora/apneni_breg/163/3398">352&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/beli_breg/163/3394">Beli breg</a></td><td class="vrtd"><a href="/gora/beli_breg/163/3394">346&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/marija_snezna_fiksinci/163/3539">Marija Snežna (Fikšinci)</a></td><td class="vrtd"><a href="/gora/marija_snezna_fiksinci/163/3539">332&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kripta/163/3367">Kripta</a></td><td class="vrtd"><a href="/gora/kripta/163/3367">331&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/piramida_lendavske_gorice/163/2965">Piramida (Lendavske gorice)</a></td><td class="vrtd"><a href="/gora/piramida_lendavske_gorice/163/2965">327&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/griski_vrh/163/3374">Griški vrh</a></td><td class="vrtd"><a href="/gora/griski_vrh/163/3374">322&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/makotrov_breg/163/3509">Makotrov breg</a></td><td class="vrtd"><a href="/gora/makotrov_breg/163/3509">319&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kapela_v_zgornjih_moravcih/163/3508">Kapela v Zgornjih Moravcih</a></td><td class="vrtd"><a href="/gora/kapela_v_zgornjih_moravcih/163/3508">315&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveti_martin_stari_breg/163/3415">Sveti Martin (Stari breg)</a></td><td class="vrtd"><a href="/gora/sveti_martin_stari_breg/163/3415">307&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/fuks_graba/163/3456">Fuks graba</a></td><td class="vrtd"><a href="/gora/fuks_graba/163/3456">305&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/trestenjak/163/3422">Trestenjak</a></td><td class="vrtd"><a href="/gora/trestenjak/163/3422">304&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtdA"><a href="/gora/razgledni_stolp_vinarium_lendava/163/2964">Razgledni stolp Vinarium Lendava</a></td><td class="vrtdA"><a href="/gora/razgledni_stolp_vinarium_lendava/163/2964">302&nbsp;m</a></td><td class="vrtdX">300&nbsp;m</td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveta_helena_pertoca/163/3540">Sveta Helena (Pertoča)</a></td><td class="vrtd"><a href="/gora/sveta_helena_pertoca/163/3540">298&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/planinska_koca_rak/163/3376">Planinska koča Rak</a></td><td class="vrtd"><a href="/gora/planinska_koca_rak/163/3376">290&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/ograd/163/3423">Ograd</a></td><td class="vrtd"><a href="/gora/ograd/163/3423">282&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/izvir_slatine_pod_cincevim_bregom/163/3363">Izvir slatine (pod Činčevim bregom)</a></td><td class="vrtd"><a href="/gora/izvir_slatine_pod_cincevim_bregom/163/3363">280&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/vidrin_center_aqualutra/163/3495">Vidrin center Aqualutra</a></td><td class="vrtd"><a href="/gora/vidrin_center_aqualutra/163/3495">275&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/jezero_krizevci/163/3408">Jezero Križevci</a></td><td class="vrtd"><a href="/gora/jezero_krizevci/163/3408">272&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sveta_trojica_v_lendavskih_goricah/163/2963">Sveta Trojica v Lendavskih goricah</a></td><td class="vrtd"><a href="/gora/sveta_trojica_v_lendavskih_goricah/163/2963">266&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/kacova_mlaka/163/3396">Kačova mlaka</a></td><td class="vrtd"><a href="/gora/kacova_mlaka/163/3396">265&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/mocvara_loncarovci/163/3491">Močvara (Lončarovci)</a></td><td class="vrtd"><a href="/gora/mocvara_loncarovci/163/3491">257&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/rotunda_sv_nikolaja_selo/163/1399">Rotunda sv. Nikolaja (Selo)</a></td><td class="vrtd"><a href="/gora/rotunda_sv_nikolaja_selo/163/1399">251&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/vrsic_nad_bogojino/163/1400">Vršič nad Bogojino</a></td><td class="vrtd"><a href="/gora/vrsic_nad_bogojino/163/1400">246&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/hodosko_jezero/163/3378">Hodoško jezero</a></td><td class="vrtd"><a href="/gora/hodosko_jezero/163/3378">243&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/slatinski_vrelec_nuskova/163/3393">Slatinski vrelec Nuskova</a></td><td class="vrtd"><a href="/gora/slatinski_vrelec_nuskova/163/3393">239&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/ledavsko_jezero/163/3414">Ledavsko jezero</a></td><td class="vrtd"><a href="/gora/ledavsko_jezero/163/3414">218&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/lendavski_grad_dolnjelendavski_grad/163/2962">Lendavski grad (Dolnjelendavski grad)</a></td><td class="vrtd"><a href="/gora/lendavski_grad_dolnjelendavski_grad/163/2962">205&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtdA"><a href="/gora/sveti_vid_pri_bukovniskem_jezeru/163/3482">Sveti Vid (pri Bukovniškem jezeru)</a></td><td class="vrtdA"><a href="/gora/sveti_vid_pri_bukovniskem_jezeru/163/3482">205&nbsp;m</a></td><td class="vrtdX">200&nbsp;m</td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/plecnikova_cerkev_bogojina/163/3483">Plečnikova cerkev (Bogojina)</a></td><td class="vrtd"><a href="/gora/plecnikova_cerkev_bogojina/163/3483">198&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/bukovnisko_jezero/163/2109">Bukovniško jezero</a></td><td class="vrtd"><a href="/gora/bukovnisko_jezero/163/2109">189&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/sobosko_jezero/163/3424">Soboško jezero</a></td><td class="vrtd"><a href="/gora/sobosko_jezero/163/3424">188&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/ribnik_taskal/163/3434">Ribnik Taškal</a></td><td class="vrtd"><a href="/gora/ribnik_taskal/163/3434">183&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/gramoznica_doklezovje/163/3435">Gramoznica Dokležovje</a></td><td class="vrtd"><a href="/gora/gramoznica_doklezovje/163/3435">182&nbsp;m</a></td></tr>
+
+<tr class="vr1"><td class="vrtd"><a href="/gora/gramoznica_vucja_jama/163/3427">Gramoznica Vučja jama</a></td><td class="vrtd"><a href="/gora/gramoznica_vucja_jama/163/3427">179&nbsp;m</a></td></tr>
+
+<tr class="vr0"><td class="vrtd"><a href="/gora/otok_ljubezni/163/3450">Otok ljubezni</a></td><td class="vrtd"><a href="/gora/otok_ljubezni/163/3450">179&nbsp;m</a></td></tr>
+
+        </table>
+        </div>
+        </td>
+        <td>
+<div id="opisgorovja" class="opisgorovja">Prekmurje ja pokrajina na skrajnem severovzhodu Slovenije, z najvišjim vrhom Sotinski breg oz. Kugla (418 m), ki se nahaja na Goričkem. Pokrajino od ostalih Slovenskih goric oz. Štajerske loči reka Mura, ki izvira v sosednji Avstriji.</div>
+        </td>
+           </tr></table>
+<script>gorovjeopis = document.getElementById('opisgorovja').innerHTML; gorovjeopismob = document.getElementById('opisgorovjamob').innerHTML; abc();</script>
+    </div>
+    <div id="noga">
+                <div style="float:right; position:relative;"><a href="http://hr.hribi.net" title="Hrvatski"><img src="/slike/hrv2.gif" /></a>&nbsp;&nbsp;<a href="https://www.hike.uno" title="English"><img src="/slike/eng2.gif" /></a>&nbsp;&nbsp;<a href="http://www.hiking-trail.net/" title="English - old website"><img src="/slike/eng3.png" /></a>&nbsp;</div>
+
+        <div>Copyright © 2006-2022 Hribi.net, <a class="noga" href="/pogoji.asp">Pogoji uporabe</a>, <a class="noga" href="/piskotki.asp">Piškotki</a></div>
+    </div>
+    <div style="clear:both;"></div>
+    </div>
+
+
+<div class="right">
+<div id="oglasD">
+
+
+
+<style type="text/css">
+.adslot_1 { display:inline-block; width: 160px; height: 320px; }
+@media (max-width: 800px) { .adslot_1 { display: none; } }
+@media (min-width:1024px) { .adslot_1 { width: 160px; height: 600px; } }
+@media (min-width:1793px) { .adslot_1 { width: 160px; height: 160px; } }
+</style>
+<ins class="adsbygoogle adslot_1"
+   data-ad-client="ca-pub-0186014428427864"
+   data-ad-slot="9540509523"></ins>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+
+</div>
+</div>
+</div>
+
+
+<script>
+    function piskotki_vec()
+    {
+        document.getElementById('cookie_3').innerHTML='<div class="fc3"><'+'ifr'+'ame name="framed" width="500" height="300" border="0" frameborder="0"  overflow-y="scroll" overflow-x="hidden" allowtransparency="true" hspace="0" vspace="0" marginheight="0" marginwidth="0" src="/piskotki_podrobnosti.asp" ><'+'/ifr'+'ame></div>';
+    }
+    function piskotki_obvestilo()
+    {
+        var xmlpiskot;
+        try
+        {
+            xmlpiskot=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            try
+            {
+                xmlpiskot=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                try
+                {
+                    xmlpiskot=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e)
+                {
+                    return false;
+                }
+            }
+        }
+        xmlpiskot.onreadystatechange=function()
+        {
+            if(xmlpiskot.readyState==4)
+            {
+                document.getElementById("cookie_1").innerHTML=xmlpiskot.responseText;
+                /*
+                var $cookie_1 = $('#cookie_1');
+                var iFixedDivHeight = $cookie_1.outerHeight({ 'margin': true });
+                $(window).bind('scroll', function(e) {
+                    var iWindowHeight = $(window).height();
+                    var iScrollPosition = $(window).scrollTop(); // or document.body.scrollTop
+                    $cookie_1.css({ 'top': iWindowHeight + iScrollPosition - iFixedDivHeight });
+                });*/
+            }
+        }
+        xmlpiskot.open("GET", "/ajax_piskot_obvestilo.asp", false);
+        xmlpiskot.setRequestHeader("Cache-Control", "no-cache");
+        xmlpiskot.setRequestHeader("Pragma", "no-cache");
+        xmlpiskot.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlpiskot.send(null);}
+
+       
+    function piskotki_strinjanje(id)
+    {
+        var xmlpiskot1;
+        try
+        {
+            xmlpiskot1=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            try
+            {
+                xmlpiskot1=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                try
+                {
+                    xmlpiskot1=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e)
+                {
+                    return false;
+                }
+            }
+        }
+        xmlpiskot1.onreadystatechange=function()
+        {
+            if(xmlpiskot1.readyState==4)
+            {
+                document.getElementById("cookie_1").innerHTML="";
+            }
+        }
+        xmlpiskot1.open("GET", "/ajax_piskot_strinjanje.asp?id="+id, false);
+        xmlpiskot1.setRequestHeader("Cache-Control", "no-cache");
+        xmlpiskot1.setRequestHeader("Pragma", "no-cache");
+        xmlpiskot1.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlpiskot1.send(null);}
+
+
+    function zasebnost_strinjanje(id)
+    {
+        var xmlzasebnost1;
+        try
+        {
+            xmlzasebnost1=new XMLHttpRequest();
+        }
+        catch (e)
+        {
+            try
+            {
+                xmlzasebnost1=new ActiveXObject("Msxml2.XMLHTTP");
+            }
+            catch (e)
+            {
+                try
+                {
+                    xmlzasebnost1=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                catch (e)
+                {
+                    return false;
+                }
+            }
+        }
+        xmlzasebnost1.onreadystatechange=function()
+        {
+            if(xmlzasebnost1.readyState==4)
+            {
+            }
+        }
+        xmlzasebnost1.open("GET", "/ajax_zasebnost_strinjanje.asp?id="+id, false);
+        xmlzasebnost1.setRequestHeader("Cache-Control", "no-cache");
+        xmlzasebnost1.setRequestHeader("Pragma", "no-cache");
+        xmlzasebnost1.setRequestHeader("If-Modified-Since", "Sat, 1 Jan 2000 00:00:00 GMT");
+        xmlzasebnost1.send(null);}
+</script>
+
+<div id="cookie_1"></div>
+<script>
+    piskotki_obvestilo();
+</script>
+
+
+<script>
+    window.addEventListener('resize', function (event) {
+        menu(1); menuUser(1); menuZ();
+    });
+    
+</script>
+
+
+<div id="oglasA">
+<script src="//cdn.ipromcloud.com/ipromNS.js" async defer></script><img src="data:image/png,iprom" style="display: none" onerror="
+	(function(img) {
+		window.ipromNS = window.ipromNS || {adTags: []};
+		var adTagId = 'iprom_adtag_' + Math.round(Math.random() * (new Date()).getTime());
+		var adHolder = document.createElement('div'); adHolder.id = adTagId;
+		img.parentNode.insertBefore(adHolder, img);
+		ipromNS.adTags.push({
+			 sitePath: ['programmatic','obds453j'], 
+			 dimension: '468x60',
+			 containerId : adTagId,
+			 callback : function(err, ad){} 
+		});
+	})(this);
+"/>
+
+</div>
+
+<div>
+<script src="//cdn.ipromcloud.com/ipromNS.js" async defer></script><img src="data:image/png,iprom" style="display: none" onerror="
+(function(img) {
+window.ipromNS = window.ipromNS || {adTags: []};
+var adTagId = 'iprom_adtag_' + Math.round(Math.random() * (new Date()).getTime());
+var adHolder = document.createElement('div'); adHolder.id = adTagId;
+img.parentNode.insertBefore(adHolder, img);
+ipromNS.adTags.push({
+sitePath: ['programmatic','obds453j'],
+dimension: 'floating',
+containerId : adTagId,
+callback : function(err, ad){}
+});
+})(this);
+"/>
+</div>
+
+
+
+</form>
+</body>
+</html>
