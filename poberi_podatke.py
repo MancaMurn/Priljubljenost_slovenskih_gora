@@ -53,15 +53,21 @@ for j in range(i):
             slovar_vrh = orodja.popravi_podatke_vrh(slovar_vrh)
         seznam_podatki_vrhov += podatki
         k += 1
+        print(f'v seznam dodan vrh{j}.{k}')
+print(f'Seznam vrhov je končan, shranjenih je bilo {len(seznam_podatki_vrhov)} vrhov.')
 
 
 # Posebej naredimo še seznam vseh poti.
 seznam_vseh_poti = []
+n = 0
 for vrh in seznam_podatki_vrhov:
     seznam_poti = vrh['blok_poti']
     for pot in seznam_poti:
         pot['vrh'] = vrh['ime']
         seznam_vseh_poti.append(pot)
+        n += 1
+        print(f'Shranjujem pot {n}')
+print(f'Seznam poti je končan, shranjenih je bilo {len(seznam_vseh_poti)} vrhov.')
 
 
 # Iz seznama vrhov odstranimo bolk_poti, saj imamo za poti posebej seznam.
@@ -72,6 +78,8 @@ for vrh in seznam_podatki_vrhov:
 orodja.zapisi_csv(seznam_podatki_vrhov, ['ime', 'drzava', 'gorovje', 
 'visina', 'vrsta', 'stevilo_ogledov', 'priljubljenost', 'stevilo_poti', 'opis'],
     'obdelani_podatki/hribi.csv')
+print('Ustvarjam csv vrhov ...')
 
 orodja.zapisi_csv(seznam_vseh_poti, ['ime_poti', 'cas_poti', 'tezavnost_poti', 'vrh'], 
     'obdelani_podatki/poti.csv')
+print('Ustvarjam csv poti ...')
