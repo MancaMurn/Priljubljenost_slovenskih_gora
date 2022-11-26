@@ -32,14 +32,14 @@ vzorec_url_vrh = re.compile(
 vzorec_podatki_gore = re.compile(
     r'</script>.*?'
     r'<div class="naslov1"><div style="float:left;"><h1>(?P<ime>.+?)</h1></div>.*?'
-    r'<div class="g2"><b>Država:</b> <a class="moder" href="/gorovja">(?P<drzava>.+?)</a></div>.*?'
+    r'<div class="g2"><b>Država:</b> <a class="moder" href=".*?">(?P<drzava>.*?)</a>(, <a class="moder" href=".*?">(?P<drzava_3>.*?)</a>)?(, <a class="moder" href=".*?">(?P<drzava_2>.*?)</a>)?</div>.*?'
     r' <div class="g2"><b>Gorovje:</b> <a class="moder" href=.*?>(?P<gorovje>.+?)</a></div>.*?'
     r'<div class="g2"><b>Višina:</b> (?P<visina>.+?)&nbsp;m</div>.*?'
     r'<div class="g2"><b>Vrsta:</b> (?P<vrsta>.*?)</div>.*?'
     r'<div class="g2"><b>Ogledov:</b> (?P<stevilo_ogledov>.+?)</div>.*?'
     r'<div class="g2"><b>Priljubljenost:</b> (?P<priljubljenost>.+?)%.*?</div>.*?'
     r'<div class="g2"><b>Število poti:</b> <a class="moder" href="#poti">(?P<stevilo_poti>.+?)</a></div>.*?'
-    r'<div style="padding-top:10px;"><b>Opis gore:</b><br />(?P<opis>.+?)</div>.*?'
+    r'<div style="padding-top:10px;"><b>Opis.*?:</b><br />(?P<opis>.+?)</div>.*?'
     r'<table class="TPoti" id="poti">(?P<blok_poti>.+?)</table>',
     flags=re.DOTALL
 )

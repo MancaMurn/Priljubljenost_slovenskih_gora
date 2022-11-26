@@ -53,7 +53,9 @@ for j in range(i):
             slovar_vrh = orodja.popravi_podatke_vrh(slovar_vrh)
         seznam_podatki_vrhov += podatki
         k += 1
+        
         print(f'v seznam dodan vrh{j}.{k}')
+        print(f'v seznamu je {len(seznam_podatki_vrhov)} vrhov.')
 print(f'Seznam vrhov je končan, shranjenih je bilo {len(seznam_podatki_vrhov)} vrhov.')
 
 
@@ -67,16 +69,17 @@ for vrh in seznam_podatki_vrhov:
         seznam_vseh_poti.append(pot)
         n += 1
         print(f'Shranjujem pot {n}')
-print(f'Seznam poti je končan, shranjenih je bilo {len(seznam_vseh_poti)} vrhov.')
+print(f'Seznam poti je končan, shranjenih je bilo {len(seznam_vseh_poti)} poti.')
 
 
-# Iz seznama vrhov odstranimo bolk_poti, saj imamo za poti posebej seznam.
+#Iz seznama vrhov odstranimo bolk_poti, saj imamo za poti posebej seznam.
 for vrh in seznam_podatki_vrhov:
     del vrh['blok_poti']
+print(len(seznam_podatki_vrhov))
 
 
-orodja.zapisi_csv(seznam_podatki_vrhov, ['ime', 'drzava', 'gorovje', 
-'visina', 'vrsta', 'stevilo_ogledov', 'priljubljenost', 'stevilo_poti', 'opis'],
+orodja.zapisi_csv(seznam_podatki_vrhov, ['ime', 'drzava', 'drzava_2', 'drzava_3', 'gorovje', 
+'visina', 'vrsta', 'stevilo_ogledov', 'priljubljenost', 'stevilo_poti', 'opis', 'blok_poti'],
     'obdelani_podatki/hribi.csv')
 print('Ustvarjam csv vrhov ...')
 
