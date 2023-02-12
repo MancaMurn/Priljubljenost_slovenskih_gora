@@ -22,19 +22,24 @@ Vsaka pot, pa ima še svoje podatke:
 
 
 Delovne hipoteze:
-* Ali je priljubljenost premo sorazmerna s številom ogledov?
+* Priljubljenost in število ogledov sta linearno odvisna.
 * Kakšna je povezava med priljubljenostjo in ostalimi zajetimi podatki o vrhovih:
-    * Ali obstaja povezava med gorovjem, v katerem se nahaja vrh in priljubljenostjo?
-    * Ali obstaja povezava med nadmorsko višino vrha in priljubljenostjo?
-    * Kako je povezana priljubljenost s podatki o poteh?
-        * Ali obstaja povezava med priljubljenostjo in povprečnim časom hoje?
-        * Ali obstaja povezava med priljubljenostjo in povprečno težavnostjo?
-        * Ali obstaja povezava med priljubljenostjo in številom poti?
-* Kakšne so povezave med podatki o poteh in ostalimi podatki o vrhu?
-    * Ali je število poti odvisno od gorovja, v katerem se vrh nahaja?
-    * Ali je število poti odvisno od nadmorske višine vrha?
-    * Ali obstaja povezava med težavnostjo poti in nadmorsko višino?
-    * Ali obstaja povezava med težavnostjo poti in gorovjem?
-    * Ali je čas hoje sorazmeren z nadmorsko višino?
-    * Ali obstaja povezava med gorovjem in časom hoje?
+  * Povezava z gorovjem, v katerem se vrh nahaja:
+    * V Julijskih Alpah je najvišja povprečna vrednost priljubljenosti, v Prekmurjiu pa najmanjša.
+    * V Kamniško Savinjskih Alpah je največji delež najbolj priljubljenih (pribljubljenost >= 90) vrhov.
+    * V Prekmurju je največji delež najmanj priljubljenih (priljubljnost <= 40) vrhov.
+  * Povezava med nadmorsko višino vrha in priljubljenostjo:
+    * Najbolj priljubljeni vrhovi so višji od 1800 m.
+    * Manj priljubljeni vrhovi so nižji od 1800 m. 
+    * Vrhovi višji od 2000 m imajo priljubljenost višjo od 60.
+  * Povezava med številom poti in priljubljenostjo:
+    * Maksimalno priljubljeni imajo vsaj 10 različnih poti in manj priljubljeni imajo največ 2 različni poti.
+    *  Vrhovi, ki imajo več kot 6 različnih poti so med najbolj priljubljenimi. 
+
+
+* Primerjava časa hoje na poti in težavnost poti:
+  * Največ zahtevnih poti je dolgih (6 ali več ur).
+  * Večina lahkih poti je kratkih (manj kot 3 ure).* 
+    
+    
 
